@@ -3,17 +3,19 @@ import { UserInfo } from '../UserInfo';
 import './TodoInfo.scss';
 
 export const TodoInfo = ({ todo }) => {
+  const {completed, title, user} = todo;
+
   const cls = [
     'TodoInfo',
-    todo.completed ? 'TodoInfo--completed' : '',
+    completed ? 'TodoInfo--completed' : '',
   ];
 
   return (
     <article className={cls.join(' ')}>
-      <h2 className="TodoInfo__title">{todo.title}</h2>
+      <h2 className="TodoInfo__title">{title}</h2>
 
-      {todo.user && (
-        <UserInfo user={todo.user} />
+      {user && (
+        <UserInfo user={user} />
       )}
     </article>
   );
