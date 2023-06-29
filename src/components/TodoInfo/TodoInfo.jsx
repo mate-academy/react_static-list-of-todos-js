@@ -1,7 +1,11 @@
 import { UserInfo } from '../UserInfo';
 
 export const TodoInfo = ({ todo }) => {
-  const { completed, title, user } = todo;
+  const {
+    completed,
+    title,
+    user
+  } = todo;
 
   return (
     <article className={`TodoInfo ${completed && 'TodoInfo--completed'}`}>
