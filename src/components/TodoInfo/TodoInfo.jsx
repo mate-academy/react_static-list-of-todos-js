@@ -4,7 +4,7 @@ import { UserInfo } from '../UserInfo/UserInfo';
 export const TodoInfo = ({ todo }) => (
   <article className={
     cn('TodoInfo',
-      { 'TodoInfo--completed': todo.completed === true })}
+      { 'TodoInfo--completed': todo.completed })}
   >
     <h2
       className="TodoInfo__title"
