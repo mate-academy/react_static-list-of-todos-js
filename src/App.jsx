@@ -1,5 +1,4 @@
 import './App.scss';
-import { React } from 'react';
 import todosFromServer from './api/todos.json';
 import usersFromServer from './api/users.json';
 import { TodoList } from './components/TodoList';
