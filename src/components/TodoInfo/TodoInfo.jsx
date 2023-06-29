@@ -1,11 +1,18 @@
+import cn from 'classnames';
 import { UserInfo } from '../UserInfo/UserInfo';
 
-export const TodoInfo = ({ title, user }) => (
-  <article className="TodoInfo TodoInfo--completed">
-    <h2 className="TodoInfo__title TodoInfo--completed">{title}</h2>
+export const TodoInfo = ({ todo }) => (
+  <article className={
+    cn('TodoInfo',
+      { 'TodoInfo--completed': todo.completed === true })}
+  >
+    <h2
+      className="TodoInfo__title"
+    >
+      {todo.title}
+    </h2>
     <UserInfo
-      user={user}
+      user={todo.user}
     />
   </article>
-
 );

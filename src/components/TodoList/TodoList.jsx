@@ -5,8 +5,7 @@ export const TodoList = ({ todos }) => (
     {todos.map(todo => (
       todo && (
         <TodoInfo
-          title={todo.title}
-          user={todo.user}
+          todo={todo}
           key={todo.id}
         />
       )
