@@ -6,6 +6,7 @@ export const TodoList = ({ todos }) => (
       <TodoInfo
         todo={todo}
         user={todo.user}
+        key={todo.id}
       />
     ))}
   </section>
