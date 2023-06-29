@@ -6,6 +6,10 @@ html {
   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
 }
 
+.UserInfo {
+  font-style: italic;
+}
+
 .TodoInfo {
   width: max-content;
   padding: 8px;
@@ -23,8 +27,4 @@ html {
   &--completed &__title {
     color: #080;
   }
-}
-
-.UserInfo {
-  font-style: italic;
 }
