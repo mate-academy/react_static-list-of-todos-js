@@ -1,4 +1,5 @@
 import { UserInfo } from '../UserInfo';
+import './TodoInfo.scss';
 
 export const TodoInfo = ({ todo }) => (
   <article className={`TodoInfo ${todo.completed ? 'TodoInfo--completed' : ''}`}>
