@@ -4,7 +4,7 @@ import todosFromServer from './api/todos.json';
 import usersFromServer from './api/users.json';
 import { TodoList } from './components/TodoList';
 
-export function getUserById(userId) {
+function getUserById(userId) {
   return usersFromServer.find(user => user.id === userId)
       || null;
 }
