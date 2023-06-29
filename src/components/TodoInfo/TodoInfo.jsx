@@ -1,10 +1,13 @@
 import cn from 'classnames';
 import { UserInfo } from '../UserInfo';
+import './TodoInfo.scss';
 
 export const TodoInfo = ({ todo }) => {
-  const { completed,
+  const {
+    completed,
     title,
-    user } = todo;
+    user,
+  } = todo;
 
   return (
     <article className={cn('TodoInfo', {
