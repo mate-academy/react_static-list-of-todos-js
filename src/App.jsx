@@ -1,54 +1,132 @@
+import 'bulma/css/bulma.css';
 import './App.scss';
+import { useState } from 'react';
 
-import todosFromServer from './api/todos.json';
-import usersFromServer from './api/users.json';
+export const goodsFromServer = [
+  'Dumplings',
+  'Carrot',
+  'Eggs',
+  'Ice cream',
+  'Apple',
+  'Bread',
+  'Fish',
+  'Honey',
+  'Jam',
+  'Garlic',
+];
 
-function getUserById(userId) {
-  return usersFromServer.find(user => user.id === userId)
-      || null;
+const SORT_FIELD_ALPHABET = 'alphabet';
+const SORT_FIELD_LENGTH = 'length';
+
+function getNewSort(goods, alphOrLength, reversed) {
+  const newGoods = [...goods];
+
+  if (!alphOrLength && reversed) {
+    return newGoods.reverse();
+  }
+
+  if (alphOrLength) {
+    newGoods.sort((good1, good2) => {
+      switch (alphOrLength) {
+        case SORT_FIELD_LENGTH:
+          if (good1.length !== good2.length) {
+            return reversed
+              ? good2.length - good1.length
+              : good1.length - good2.length;
+          }
+
+          return reversed
+            ? good2.localeCompare(good1)
+            : good1.localeCompare(good2);
+
+        case SORT_FIELD_ALPHABET:
+          return reversed
+            ? good2.localeCompare(good1)
+            : good1.localeCompare(good2);
+
+        default:
+          return 0;
+      }
+    });
+  }
+
+  return newGoods;
 }
 
-export const todos = todosFromServer.map(todo => ({
-  ...todo,
-  user: getUserById(todo.userId),
-}));
+export const App = () => {
+  const [sortField, setSortField] = useState('');
+  const [sortReverse, setSortReverse] = useState(false);
+  const updateGoods = getNewSort(goodsFromServer, sortField, sortReverse);
 
-export const App = () => (
-  <div className="App">
-    <h1 className="App__title">Static list of todos</h1>
+  return (
+    <div className="section content">
+      <div className="buttons">
+        <button
+          type="button"
+          className={`button is-info ${
+            sortField !== SORT_FIELD_ALPHABET
+              ? 'is-light'
+              : ''
+          }`}
+          onClick={() => {
+            setSortField(SORT_FIELD_ALPHABET);
+          }}
+        >
+          Sort alphabetically
+        </button>
 
-    <section className="TodoList">
-      <article className="TodoInfo TodoInfo--completed">
-        <h2 className="TodoInfo__title">HTML</h2>
+        <button
+          type="button"
+          className={`button is-info is-success ${
+            sortField !== SORT_FIELD_LENGTH
+              ? 'is-light'
+              : ''
+          }`}
+          onClick={() => {
+            setSortField(SORT_FIELD_LENGTH);
+          }}
+        >
+          Sort by length
+        </button>
 
-        <a className="UserInfo" href="mailto:Sincere@april.biz">
-          Leanne Graham
-        </a>
-      </article>
+        <button
+          type="button"
+          className={`button is-info is-warning ${
+            sortReverse
+              ? ''
+              : 'is-light'
+          }`}
+          onClick={() => {
+            setSortReverse(!sortReverse);
+          }}
+        >
+          Reverse
+        </button>
 
-      <article className="TodoInfo TodoInfo--completed">
-        <h2 className="TodoInfo__title">CSS</h2>
+        {(sortField !== '' || sortReverse) && (
+          <button
+            type="button"
+            className="button is-danger is-light"
+            onClick={() => {
+              setSortField('');
+              setSortReverse(false);
+            }}
+          >
+            Reset
+          </button>
+        )}
+      </div>
 
-        <a className="UserInfo" href="mailto:Sincere@april.biz">
-          Leanne Graham
-        </a>
-      </article>
-
-      <article className="TodoInfo TodoInfo--completed">
-        <h2 className="TodoInfo__title">JS</h2>
-
-        <a className="UserInfo" href="mailto:Shanna@melissa.tv">
-          Ervin Howell
-        </a>
-      </article>
-
-      <article className="TodoInfo">
-        <h2 className="TodoInfo__title">React</h2>
-
-        <a className="UserInfo" href="mailto:Nathan@yesenia.net">
-          Clementine Bauch
-        </a>
-      </article>
-    </section>
-  </div>
-);
+      <ul>
+        {updateGoods.map(good => (
+          <li
+            data-cy="Good"
+            key={good}
+          >
+            {good}
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+};
