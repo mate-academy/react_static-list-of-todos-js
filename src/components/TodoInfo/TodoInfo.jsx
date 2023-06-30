@@ -4,10 +4,11 @@ import './TodoInfo.scss';
 
 export const TodoInfo = ({ todo }) => {
   const { title, user } = todo;
-  const isCompleted = todo.completed ? 'TodoInfo--completed' : '';
 
   return (
-    <article className={classnames(`TodoInfo ${isCompleted}`)}>
+    <article className={
+      classnames('TodoInfo', { 'TodoInfo--completed': todo.completed })}
+    >
       <h2 className="TodoInfo__title">{title}</h2>
 
       <UserInfo user={user} />
