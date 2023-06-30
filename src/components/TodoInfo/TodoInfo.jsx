@@ -9,10 +9,7 @@ export const TodoInfo = ({ todo }) => {
     user,
   } = todo;
 
-  // const isCompleted = completed ? 'TodoInfo TodoInfo--completed' : 'TodoInfo';
-
   return (
-    // <article className={isCompleted}>
     <article className={cn('TodoInfo', {
       'TodoInfo--completed': completed,
     })}>
