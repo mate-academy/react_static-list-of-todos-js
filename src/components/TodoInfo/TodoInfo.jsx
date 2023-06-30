@@ -1,20 +1,24 @@
+import cn from 'classnames';
 import { UserInfo } from '../UserInfo';
 
 export const TodoInfo = ({ todo }) => {
-  const classCompleted = todo.completed
-    ? 'TodoInfo TodoInfo--completed'
-    : 'TodoInfo';
+  const {
+    user,
+    title,
+    completed,
+  } = todo;
 
   return (
-    <>
-      <article className={classCompleted}>
-        <h2 className="TodoInfo__title">
-          {todo.title}
-        </h2>
+    <article className={cn('TodoInfo', {
+      ' TodoInfo--completed': completed,
+    })}
+    >
+      <h2 className="TodoInfo__title">
+        {title}
+      </h2>
 
-        {todo.user !== null
-          && <UserInfo user={todo.user} />}
-      </article>
-    </>
+      {user !== null
+        && <UserInfo user={user} />}
+    </article>
   );
 };
