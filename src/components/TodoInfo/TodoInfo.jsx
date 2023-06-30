@@ -17,8 +17,7 @@ export const TodoInfo = ({ todo }) => {
         {title}
       </h2>
 
-      {user !== null
-        && <UserInfo user={user} />}
+      {user !== null && <UserInfo user={user} />}
     </article>
   );
 };
