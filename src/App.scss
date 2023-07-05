@@ -6,6 +6,10 @@ html {
   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
 }
 
+.TodoList {
+  padding: 0;
+}
+
 .TodoInfo {
   width: max-content;
   padding: 8px;
@@ -13,6 +17,7 @@ html {
   border: 1px solid #000;
   border-radius: 8px;
   background-color: antiquewhite;
+  list-style: none;
 
   &__title {
     margin: 4px 0;
