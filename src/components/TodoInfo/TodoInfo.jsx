@@ -1,10 +1,13 @@
 import './TodoInfo.scss';
+import cn from 'classnames';
 import { UserInfo } from '../UserInfo';
 
 export const TodoInfo = ({ todo }) => (
   <article
     key={todo.id}
-    className={todo.completed ? 'TodoInfo TodoInfo--completed' : 'TodoInfo'}
+    className={cn('TodoInfo', {
+      'TodoInfo--completed': todo.completed,
+    })}
   >
     <h2 className="TodoInfo__title">{todo.title}</h2>
     {todo.user && (
