@@ -2,10 +2,11 @@
 export const UserInfo = ({ user }) => {
   const {
     name,
+    email,
   } = user;
 
   return (
-    <a className="UserInfo" href="mailto:Sincere@april.biz">
+    <a className="UserInfo" href={email}>
       {name}
     </a>
   );
