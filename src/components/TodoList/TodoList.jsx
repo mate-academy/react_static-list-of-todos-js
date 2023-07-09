@@ -6,6 +6,5 @@ export const TodoList = ({ todos }) => (
     {todos.map(todo => (
       <TodoInfo todo={todo} />
     ))}
-    ;
   </section>
 );
