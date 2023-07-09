@@ -7,7 +7,7 @@ export const UserInfo = ({ user }) => {
 
   return (
     <a className="UserInfo" href={email}>
-      {name}
+      {`mailto: ${name}`}
     </a>
   );
 };
