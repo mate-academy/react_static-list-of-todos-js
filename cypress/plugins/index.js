@@ -1,1 +1,1 @@
-module.exports = require('@mate-academy/cypress-tools/plugins');
+module.exports = require("@mate-academy/cypress-tools/plugins");

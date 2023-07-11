@@ -1,1 +1,1 @@
-require('@mate-academy/cypress-tools/support');
+require("@mate-academy/cypress-tools/support");

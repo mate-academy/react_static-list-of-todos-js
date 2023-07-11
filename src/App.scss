@@ -7,24 +7,26 @@ html {
 }
 
 .TodoInfo {
-  width: max-content;
+  width: 300px;
   padding: 8px;
   margin: 12px 0;
   border: 1px solid #000;
   border-radius: 8px;
-  background-color: antiquewhite;
+  background-color: rgb(224, 15, 15);
 
   &__title {
     margin: 4px 0;
     font-size: inherit;
-    color: #f00;
+    color: rgb(14, 0, 0);
   }
 
-  &--completed &__title {
+  &--completed {
     color: #080;
+    background-color: rgb(109, 214, 23);
   }
 }
 
 .UserInfo {
   font-style: italic;
+  color: rgb(255, 255, 255);
 }
