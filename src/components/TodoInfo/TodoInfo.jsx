@@ -10,7 +10,7 @@ export const TodoInfo = ({ todo }) => {
         {todo.title}
       </h2>
 
-      {todo.user ? <UserInfo user={todo.user} /> : null}
+      {todo.user && <UserInfo user={todo.user} />}
     </article>
   );
 };
