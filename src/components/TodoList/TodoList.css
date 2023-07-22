@@ -1,0 +1,8 @@
+.TodoList__list {
+  list-style: none;
+  padding: 0;
+}
+
+.TodoList__item {
+  margin-bottom: 20px;
+}
