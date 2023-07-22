@@ -1,13 +1,13 @@
 import classNames from 'classnames';
 import { UserInfo } from '../UserInfo';
 
-export const TodoInfo = ({ todo }) => (
+export const TodoInfo = ({ todo: { title, completed, user } }) => (
   <article className={classNames('TodoInfo',
     {
-      'TodoInfo--completed': todo.completed,
+      'TodoInfo--completed': completed,
     })}
   >
-    <h2 className="TodoInfo__title">{todo.title}</h2>
-    {todo.user && <UserInfo user={todo.user} />}
+    <h2 className="TodoInfo__title">{title}</h2>
+    {user && <UserInfo user={user} />}
   </article>
 );
