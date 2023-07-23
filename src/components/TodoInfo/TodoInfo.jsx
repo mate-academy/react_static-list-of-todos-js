@@ -2,8 +2,7 @@ import cn from 'classnames';
 import { UserInfo } from '../UserInfo';
 import './TodoInfo.scss';
 
-export const TodoInfo = ({ todo }) => (
-  // <article className="TodoInfo TodoInfo--completed">
+export const TodoInfo = ({ todo }) => todo && (
   <article className={cn(
     'TodoInfo',
     { 'TodoInfo--completed': todo.completed === true },
