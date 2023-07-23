@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { TodoInfo } from '../TodoInfo';
 
 // Add the required props
@@ -10,3 +11,7 @@ export const TodoList = ({ todos }) => (
     </section>
   </>
 );
+
+TodoList.propTypes = {
+  todos: PropTypes.arrayOf(PropTypes.object.isRequired).isRequired,
+};
