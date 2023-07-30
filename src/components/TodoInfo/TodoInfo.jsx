@@ -7,7 +7,7 @@ function getUserById(userId) {
       || null;
 }
 
-export const TodoInfo = ({ todo }) => (
+export const TodoInfo = ( {todo} ) => (
   <article className={`TodoInfo ${todo.completed === true ? 'TodoInfo--completed' : ''}`}>
     <h2 className="TodoInfo__title">
       {todo.title}
