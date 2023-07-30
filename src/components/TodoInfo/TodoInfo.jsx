@@ -14,4 +14,4 @@ export const TodoInfo = ({ todo }) => (
     </h2>
     <UserInfo user={getUserById(todo.userId)} />
   </article>
-)
+);

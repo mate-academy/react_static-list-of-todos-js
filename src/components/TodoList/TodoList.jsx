@@ -1,9 +1,7 @@
-import { TodoInfo } from "../TodoInfo";
-import todosFromServer from '../../api/todos.json';
-
+import { TodoInfo } from '../TodoInfo';
 
 // Add the required props
-export const TodoList = ( {todos} ) => (
+export const TodoList = ({ todos }) => (
   <>
     <h1 className="App__title">Static list of todos</h1>
     <section className="TodoList">
@@ -14,9 +12,7 @@ export const TodoList = ( {todos} ) => (
             key={todo.id}
           />
         </>
-      )
-        
-      )}
+      ))}
     </section>
   </>
 );
