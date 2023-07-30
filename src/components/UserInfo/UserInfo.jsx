@@ -5,3 +5,4 @@ export const UserInfo = ( {user} ) => (
     {user.name}
   </a>
 );
+
