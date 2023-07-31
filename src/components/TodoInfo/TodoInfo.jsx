@@ -3,9 +3,7 @@ import './TodoInfo.scss';
 import { UserInfo } from '../UserInfo';
 
 export const TodoInfo = ({ todo }) => {
-  const { user,
-    completed,
-    title } = todo;
+  const { user, completed, title } = todo;
 
   return (
     <article className={
