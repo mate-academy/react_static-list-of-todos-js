@@ -5,14 +5,16 @@ export const TodoList = ( {todos} ) => (
   <>
     <h1 className="App__title">Static list of todos</h1>
     <section className="TodoList">
-      {todos.map(todo => (
-        <>
-          <TodoInfo
-            todo={todo}
-            key={todo.id}
-          />
-        </>
-      ))}
+      <ul>
+        {todos.map(todo => (
+          <li>
+            <TodoInfo
+              todo={todo}
+              key={todo.id}
+            />
+          </li>
+        ))}
+      </ul>
     </section>
   </>
 );
