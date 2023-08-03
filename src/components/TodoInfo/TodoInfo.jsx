@@ -1,4 +1,4 @@
-import { UserInfo } from "../UserInfo";
+import { UserInfo } from '../UserInfo';
 
 // Add the required props
 export const TodoInfo = ({ todo }) => {
