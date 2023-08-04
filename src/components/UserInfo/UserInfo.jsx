@@ -1,4 +1,10 @@
-// Add the required props
-export const UserInfo = () => (
-  <>UserInfo markup</>
+export const UserInfo = ({ user }) => (
+  <a
+    className="UserInfo"
+    target="_blank"
+    rel="noreferrer"
+    href={`mailto:${user.email}`}
+  >
+    {user.name}
+  </a>
 );
