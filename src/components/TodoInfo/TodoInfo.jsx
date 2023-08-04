@@ -2,15 +2,15 @@ import cn from 'classnames';
 import { UserInfo } from '../UserInfo';
 import './TodoInfo.scss';
 
-export const TodoInfo = ({ todo }) => (
+export const TodoInfo = ({ todo: { id, userId, completed, title, user } }) => (
   <article className={cn('TodoInfo', {
-    'TodoInfo--completed': todo.completed,
+    'TodoInfo--completed': completed,
   })}
   >
-    <h2 className="TodoInfo__title">{todo.title}</h2>
+    <h2 className="TodoInfo__title">{title}</h2>
 
-    {typeof todo.user === 'object' && (
-      <UserInfo user={todo.user} />
+    {user && (
+      <UserInfo user={user} />
     )}
   </article>
 );
