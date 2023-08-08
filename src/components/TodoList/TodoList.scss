@@ -12,8 +12,12 @@
     color: #f00;
   }
 
-  &--completed,
-  &__title {
+  &--completed &__title {
     color: #080;
   }
+}
+
+.TodoList {
+  list-style-type: none;
+  padding: 0;
 }

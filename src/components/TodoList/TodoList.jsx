@@ -3,8 +3,12 @@ import './TodoList.scss';
 
 export const TodoList = ({ todos }) => (
   <>
-    {todos.map(todo => (
-      <TodoInfo todo={todo} key={todo.id} />
-    ))}
+    <ul className="TodoList">
+      {todos.map(todo => (
+        <li>
+          <TodoInfo todo={todo} key={todo.id} />
+        </li>
+      ))}
+    </ul>
   </>
 );
