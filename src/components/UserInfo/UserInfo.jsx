@@ -1,4 +1,8 @@
-// Add the required props
-export const UserInfo = () => (
-  <>UserInfo markup</>
+// Add the required
+
+
+export const UserInfo = ({ user }) => (
+  <a className="UserInfo" href={`mailto:${user.email}`}>
+    {user.name}
+  </a>
 );
