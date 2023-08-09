@@ -1,3 +1,4 @@
+import cn from 'classnames';
 import { UserInfo } from '../UserInfo';
 import './TodoInfo.scss';
 
@@ -6,15 +7,13 @@ export const TodoInfo = ({ todo }) => {
 
   return (
     <article
-      className={`TodoInfo ${completed
-        ? 'TodoInfo--completed'
-        : ''}`}
+      className={cn('TodoInfo', { 'TodoInfo--completed': completed })}
     >
       <h2 className="TodoInfo__title">
         {title}
       </h2>
 
-      <UserInfo user={user} />
+      {user && <UserInfo user={user} />}
     </article>
   );
 };
