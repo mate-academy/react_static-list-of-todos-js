@@ -8,7 +8,7 @@ export const TodoInfo = ({ todo: { userId, completed, title, user } }) => (
   >
     <h2 className="TodoInfo__title">{title}</h2>
 
-    {userId && (
+    {userId && user && (
       <UserInfo user={user} />
     )}
 
