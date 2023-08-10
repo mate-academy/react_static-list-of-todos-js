@@ -1,7 +1,8 @@
 import cn from 'classnames';
+import { UserInfo } from '../UserInfo';
 
 export const TodoInfo = (
-  { todo: { completed, title, user: { name, email } } },
+  { todo: { completed, title, user } },
 ) => (
   <article
     className={cn('TodoInfo', {
@@ -10,8 +11,6 @@ export const TodoInfo = (
   >
     <h2 className="TodoInfo__title">{title}</h2>
 
-    <a className="UserInfo" href={`mailto:${email}`}>
-      {name}
-    </a>
+    <UserInfo user={user} />
   </article>
 );
