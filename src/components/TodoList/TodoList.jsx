@@ -1,7 +1,7 @@
 import { TodoInfo } from '../TodoInfo';
 
 export const TodoList = ({ todos }) => (
-  <section className="TodoList">
+  <ul className="TodoList">
     {todos.map(todo => (
       <TodoInfo
         key={todo.id}
@@ -9,5 +9,5 @@ export const TodoList = ({ todos }) => (
       />
     ))}
 
-  </section>
+  </ul>
 );
