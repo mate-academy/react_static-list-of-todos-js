@@ -7,7 +7,6 @@ export const TodoInfo = ({ todo: { userId, completed, title, user } }) => (
   >
     <h2 className="TodoInfo__title">{title}</h2>
 
-    <UserInfo user={user} />
-
+    {user ? <UserInfo user={user} /> : null}
   </article>
 );
