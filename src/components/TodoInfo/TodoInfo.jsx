@@ -2,7 +2,7 @@ import { UserInfo } from '../UserInfo';
 import './TodoInfo.scss';
 
 export const TodoInfo = ({ todo }) => (
-  <article className={`TodoInfo TodoInfo--${todo.completed ? 'completed' : ''}`}>
+  <article className={`TodoInfo ${todo.completed ? 'TodoInfo--completed' : ''}`}>
     <h2 className="TodoInfo__title">
       {todo.title}
     </h2>
