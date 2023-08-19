@@ -1,6 +1,6 @@
 
-export const UserInfo = ({ todo }) => (
-  <a className="UserInfo" href="mailto:Sincere@april.biz">
-    {todo}
+export const UserInfo = ({ user }) => (
+  <a className="UserInfo" href={`mailto:${user.email}`}>
+    {user.name}
   </a>
 );
