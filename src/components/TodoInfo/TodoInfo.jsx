@@ -2,14 +2,16 @@ import './TodoInfo.scss';
 import cn from 'classnames';
 import { UserInfo } from '../UserInfo';
 
-export const TodoInfo = ({ todo }) => (
+export const TodoInfo = ({
+  todo: { user, title, completed },
+}) => (
   <li
     className={cn('TodoInfo', {
-      'TodoInfo--completed': todo.completed,
+      'TodoInfo--completed': completed,
     })}
   >
-    <h2 className="TodoInfo__title">{todo.title}</h2>
+    <h2 className="TodoInfo__title">{title}</h2>
 
-    <UserInfo user={todo.user} />
+    <UserInfo user={user} />
   </li>
 );

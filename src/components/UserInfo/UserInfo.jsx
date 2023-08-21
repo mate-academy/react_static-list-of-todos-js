@@ -1,7 +1,9 @@
 import './UserInfo.scss';
 
-export const UserInfo = ({ user }) => (
-  <a className="UserInfo" href={`mailto:${user.email}`}>
-    {user.name}
+export const UserInfo = ({
+  user: { name, email },
+}) => (
+  <a className="UserInfo" href={`mailto:${email}`}>
+    {name}
   </a>
 );
