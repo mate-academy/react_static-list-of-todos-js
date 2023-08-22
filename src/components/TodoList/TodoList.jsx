@@ -1,13 +1,13 @@
 import { TodoInfo } from '../TodoInfo';
 
 // Add the required props
-export const TodoList = ({ todoList }) => (
+export const TodoList = ({ todos }) => (
   <>
     <section className="TodoList">
-      {todoList.map(todoTask => (
+      {todos.map(todoTask => (
         <TodoInfo
           key={todoTask.id}
-          todoTask={todoTask}
+          todo={todoTask}
         />
       ))}
     </section>

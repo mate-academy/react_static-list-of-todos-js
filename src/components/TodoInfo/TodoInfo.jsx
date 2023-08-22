@@ -1,16 +1,16 @@
 import classNames from 'classnames';
 import { UserInfo } from '../UserInfo';
 
-export const TodoInfo = ({ todoTask }) => (
+export const TodoInfo = ({ todo }) => (
   <>
     <article
       className={classNames({
         TodoInfo: true,
-        'TodoInfo--completed': todoTask.completed === true,
+        'TodoInfo--completed': todo.completed === true,
       })}
     >
-      <h2 className="TodoInfo__title">{todoTask.title}</h2>
-      <UserInfo userName={todoTask.user.name} userEmail={todoTask.user.email} />
+      <h2 className="TodoInfo__title">{todo.title}</h2>
+      <UserInfo user={todo.user} />
     </article>
   </>
 );
