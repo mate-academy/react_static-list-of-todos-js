@@ -1,4 +1,5 @@
 import './TodoInfo.scss';
+import classNames from 'classnames';
 import { UserInfo } from '../UserInfo';
 
 export const TodoInfo = ({ todo }) => {
@@ -9,9 +10,8 @@ export const TodoInfo = ({ todo }) => {
   } = todo;
 
   return (
-    <article className={`TodoInfo ${completed
-      ? 'TodoInfo--completed'
-      : ''}`}
+    <article className={classNames('TodoInfo',
+      { 'TodoInfo--completed': completed })}
     >
       <h2 className="TodoInfo__title">{title}</h2>
       {user && <UserInfo user={user} />}
