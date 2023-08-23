@@ -1,3 +1,4 @@
+import classNames from 'classnames';
 import { UserInfo } from '../UserInfo';
 import './TodoInfo.scss';
 
@@ -8,11 +9,8 @@ export const TodoInfo = ({ todo }) => {
   } = todo;
 
   return (
-    <article className={
-      completed
-        ? 'TodoInfo TodoInfo--completed'
-        : 'TodoInfo'
-    }
+    <article
+      className={`TodoInfo ${classNames({ 'TodoInfo--completed': completed })}`}
     >
       <h2 className="TodoInfo__title">
         {title}
