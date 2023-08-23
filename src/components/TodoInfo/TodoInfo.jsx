@@ -2,22 +2,19 @@ import cn from 'classnames';
 import './TodoInfo.scss';
 import { UserInfo } from '../UserInfo/UserInfo';
 
-// Add the required props
 export const TodoInfo = ({ todo }) => (
-  <>
-    <article className={
-      cn(
-        'TodoInfo', {
-          'TodoInfo--completed': todo.completed,
-        },
-      )
-    }
-    >
-      <h2 className="TodoInfo__title">
-        {todo.title}
-      </h2>
+  <article className={
+    cn(
+      'TodoInfo', {
+        'TodoInfo--completed': todo.completed,
+      },
+    )}
+  >
 
-      {todo.user && <UserInfo user={todo.user} />}
-    </article>
-  </>
+    <h2 className="TodoInfo__title">
+      {todo.title}
+    </h2>
+
+    {todo.user && <UserInfo user={todo.user} />}
+  </article>
 );
