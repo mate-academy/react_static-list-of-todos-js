@@ -1,4 +1,15 @@
 // Add the required props
-export const UserInfo = () => (
-  <>UserInfo markup</>
-);
+import './UserInfo.scss';
+
+export const UserInfo = ({ user }) => {
+  const {
+    email,
+    name,
+  } = user;
+
+  return (
+    <a className="UserInfo" href={`mailto:${email}`}>
+      {name}
+    </a>
+  );
+};
