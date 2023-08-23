@@ -10,10 +10,9 @@ export const TodoInfo = ({ todo }) => {
         'TodoInfo--completed': completed,
       })}
     >
-
       <h2 className="TodoInfo__title">{title}</h2>
 
-      <UserInfo user={user} />
+      {user && (<UserInfo user={user} />)}
     </article>
   );
 };
