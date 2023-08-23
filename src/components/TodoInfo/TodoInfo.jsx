@@ -1,5 +1,5 @@
+import './Todoinfo.scss';
 import cn from 'classnames';
-
 import { UserInfo } from '../UserInfo';
 
 export const TodoInfo = ({ todo }) => {
