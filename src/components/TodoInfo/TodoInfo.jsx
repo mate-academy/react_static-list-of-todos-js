@@ -4,6 +4,8 @@ import { UserInfo } from '../UserInfo';
 export const TodoInfo = ({ todo }) => {
   const {
     completed,
+    title,
+    user,
   } = todo;
 
   return (
@@ -11,9 +13,9 @@ export const TodoInfo = ({ todo }) => {
       'TodoInfo--completed': completed,
     })}
     >
-      <h2 className="TodoInfo__title">{todo.title}</h2>
+      <h2 className="TodoInfo__title">{title}</h2>
 
-      <UserInfo user={todo.user} />
+      <UserInfo user={user} />
     </article>
   );
 };
