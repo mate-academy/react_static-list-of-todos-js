@@ -1,8 +1,8 @@
 import React from 'react';
 import todosFromServer from './api/todos.json';
 import usersFromServer from './api/users.json';
-import { TodoList } from './components/TodoList';
 import './App.scss';
+import TodoList from './components/TodoList/TodoList';
 
 function getUserById(userId) {
   return usersFromServer.find(user => user.id === userId) || null;
