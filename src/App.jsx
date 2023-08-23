@@ -6,7 +6,7 @@ import { TodoList } from './components/TodoList';
 
 function getUserById(userId) {
   return usersFromServer.find(user => user.id === userId)
-      || null;
+    || null;
 }
 
 export const todos = todosFromServer.map(todo => ({
