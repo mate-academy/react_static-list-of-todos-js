@@ -1,18 +1,24 @@
+:root {
+  --bg-color: #faebd7;
+  --title-color: #f00;
+  --completed-color: #080;
+}
+
 .TodoInfo {
   width: max-content;
   padding: 8px;
   margin: 12px 0;
   border: 1px solid #000;
   border-radius: 8px;
-  background-color: antiquewhite;
+  background-color: var(--bg-color);
 
   &__title {
     margin: 4px 0;
     font-size: inherit;
-    color: #f00;
+    color: var(--title-color);
   }
 
   &--completed &__title {
-    color: #080;
+    color: var(--completed-color);
   }
 }
