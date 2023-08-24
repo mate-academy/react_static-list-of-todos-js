@@ -9,7 +9,7 @@ export const TodoInfo = ({ todo }) => {
     user,
   } = todo;
 
-  return (
+  return user ? (
     <article
       className={cn('TodoInfo', { 'TodoInfo--completed': completed })}
     >
@@ -17,5 +17,5 @@ export const TodoInfo = ({ todo }) => {
 
       <UserInfo user={user} />
     </article>
-  );
+  ) : '';
 };
