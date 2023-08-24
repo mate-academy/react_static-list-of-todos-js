@@ -9,11 +9,17 @@ export const TodoInfo = ({ todo }) => {
     user,
   } = todo;
 
+  const todoClasses = cn('TodoInfo', {
+    'TodoInfo--completed': completed,
+  });
+
   return (
-    <article className={cn('TodoInfo', { 'TodoInfo--completed': completed })}>
+    <article className={todoClasses}>
       <h2 className="TodoInfo__title">{title}</h2>
 
-      {user && (<UserInfo user={user} />)}
+      {Boolean(user) && (
+        <UserInfo user={user} />
+      )}
     </article>
   );
 };
