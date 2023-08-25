@@ -16,7 +16,9 @@ export const TodoInfo = ({ todo }) => {
     >
       <h2 className="TodoInfo__title">{title}</h2>
 
-      {user && <UserInfo user={user} />}
+      {Boolean(user) && (
+      <UserInfo user={user} />
+      )}
     </article>
   );
 };
