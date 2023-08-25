@@ -10,5 +10,5 @@ export const UserInfo = ({ user }) => {
     <a className="UserInfo" href={`mailto:${email}`}>
       {name}
     </a>
-  ),
+  );
 };
