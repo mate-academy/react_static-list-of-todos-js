@@ -6,18 +6,20 @@ export const TodoInfo = ({ todo }) => {
   const {
     completed,
     title,
+    user,
   } = todo;
 
   return (
     <article
-      className={`TodoInfo ${classNames({ 'TodoInfo--completed': completed })}`}
+      className={classNames('TodoInfo',
+        { 'TodoInfo--completed': completed })}
     >
       <h2 className="TodoInfo__title">
         {title}
       </h2>
 
-      {todo.user && (
-      <UserInfo user={todo.user} />
+      {user && (
+      <UserInfo user={user} />
       )}
     </article>
   );
