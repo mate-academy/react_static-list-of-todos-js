@@ -1,5 +1,6 @@
 import cn from 'classnames';
 import { UserInfo } from '../UserInfo';
+import './TodoInfo.scss';
 
 export const TodoInfo = ({ todo }) => {
   const {
@@ -15,7 +16,7 @@ export const TodoInfo = ({ todo }) => {
     >
       <h2 className="TodoInfo__title">{title}</h2>
 
-      <UserInfo user={user} />
+      {user && <UserInfo user={user} />}
     </article>
   );
 };
