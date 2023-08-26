@@ -10,6 +10,7 @@ export const TodoInfo = ({ title, tusk, todosUserId }) => (
     <h2 className="TodoInfo__title">
       {title}
     </h2>
+
     {usersFromServer.map(user => (
       <a className="UserInfo" href={`mailto:${user.email}`}>
         {todosUserId === user.id && user.name}

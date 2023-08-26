@@ -7,8 +7,7 @@ export const TodoList = () => (
       <TodoInfo
         title={todo.title}
         tusk={todo.completed}
-        todosUserId={todo.userI
-      }
+        todosUserId={todo.userId}
       />
     ))}
   </>
