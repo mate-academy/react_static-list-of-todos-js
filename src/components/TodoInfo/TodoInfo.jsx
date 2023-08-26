@@ -1,5 +1,4 @@
 import cn from 'classnames';
-
 import { UserInfo } from '../UserInfo';
 import './TodoInfo.scss';
 
