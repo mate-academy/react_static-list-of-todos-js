@@ -21,9 +21,9 @@ export const TodoInfo = ({ todo }) => {
         {title}
       </h2>
 
-      {user && <UserInfo user={user} />
-      }
+      {user && (
+      <UserInfo user={user} />
+      )}
     </article>
-
   );
 };
