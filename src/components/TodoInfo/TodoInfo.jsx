@@ -13,8 +13,7 @@ export const TodoInfo = ({ todo }) => {
   return (
     <article
       className={
-        cn({
-          TodoInfo: true,
+        cn('TodoInfo', {
           'TodoInfo--completed': completed,
         })
       }
@@ -23,7 +22,9 @@ export const TodoInfo = ({ todo }) => {
         {title}
       </h2>
 
-      <UserInfo key={user.id} user={user} />
+      {user && (
+        <UserInfo key={user.id} user={user} />
+      )}
     </article>
   );
 };
