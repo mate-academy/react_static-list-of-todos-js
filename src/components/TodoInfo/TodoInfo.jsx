@@ -1,7 +1,6 @@
 import './TodoInfo.scss';
 import { UserInfo } from '../UserInfo';
-
-const cn = require('classnames');
+import cn from 'classnames';
 
 export const TodoInfo = ({ todo }) => {
   const {
