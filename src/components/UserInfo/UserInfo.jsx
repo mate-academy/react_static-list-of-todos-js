@@ -1,3 +1,5 @@
+import './UserInfo.scss';
+
 export const UserInfo = ({ user }) => {
   const { name, email } = user;
 
@@ -7,3 +9,5 @@ export const UserInfo = ({ user }) => {
     </a>
   );
 };
+
+export default UserInfo;
