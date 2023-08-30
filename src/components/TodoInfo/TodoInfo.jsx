@@ -1,25 +1,19 @@
 // Add the required props
-import classnames from 'classnames';
+import cn from 'classnames';
 import { UserInfo } from '../UserInfo';
 import './TodoInfo.scss';
 
-// export const TodoInfo = ({ todo }) => (
-//   <article className={`TodoInfo ${todo.completed ? 'TodoInfo--completed' : ''}`}>
-//     <h2 className="TodoInfo__title">
-//       {todo.title}
-//     </h2>
-//     <UserInfo user={todo.user} />
-//   </article>
-// );
-export const TodoInfo = ({ todo }) => (
-  <article
-    className={classnames('TodoInfo', {
-      'TodoInfo--completed': todo.completed,
+export const TodoInfo = ({ todo }) => {
+  const { title, completed, user } = todo;
+
+  return (
+    <article className={cn('TodoInfo', {
+      'TodoInfo--completed': completed,
     })}
-  >
-    <h2 className="TodoInfo__title">
-      {todo.title}
-    </h2>
-    <UserInfo user={todo.user} />
-  </article>
-);
+    >
+      <h2 className="TodoInfo__title">{title}</h2>
+
+      {user && <UserInfo user={user} />}
+    </article>
+  );
+};

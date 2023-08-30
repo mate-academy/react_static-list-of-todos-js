@@ -1,10 +1,12 @@
 .TodoInfo {
+  --primary-color: #000;
+  --background-color: antiquewhite;
   width: max-content;
   padding: 8px;
   margin: 12px 0;
-  border: 1px solid #000;
+  border: 1px solid var(--primary-color);
   border-radius: 8px;
-  background-color: antiquewhite;
+  background-color: var(--background-color);
 
   &__title {
     margin: 4px 0;
