@@ -11,7 +11,7 @@ export const TodoInfo = ({ todo }) => (
       {todo.title}
     </h2>
 
-    {todo.user !== null && (<UserInfo user={todo.user} />)}
+    {todo.user && (<UserInfo user={todo.user} />)}
   </article>
 
 );
