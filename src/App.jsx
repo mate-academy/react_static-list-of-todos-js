@@ -5,7 +5,7 @@ import usersFromServer from './api/users.json';
 
 function getUserById(userId) {
   return usersFromServer.find(user => user.id === userId)
-      || null;
+    || null;
 }
 
 export const todos = todosFromServer.map(todo => ({
@@ -13,18 +13,44 @@ export const todos = todosFromServer.map(todo => ({
   user: getUserById(todo.userId),
 }));
 
-export const App = () => (
+const UserInfo = ({ user }) => (
+  <a className="UserInfo" href="mailto:Sincere@april.biz">
+    {user.name}
+  </a>
+);
+
+export const TodoInfo = ({ todo }) => (
+  <article className="TodoInfo TodoInfo--completed">
+    <h2 className="TodoInfo__title">HTML</h2>
+
+    <UserInfo user={todo.user} />
+  </article>
+);
+
+const TodoList = ({ todos }) => (
+  <section className="TodoList">
+    {todos.map(todo => (
+      <TodoInfo todo={todo} key={todo.id} />
+    ))}
+  </section>
+);
+
+export const App = ({ user }) => (
   <div className="App">
     <h1 className="App__title">Static list of todos</h1>
+    <TodoList todos={todos} />
 
     <section className="TodoList">
-      <article className="TodoInfo TodoInfo--completed">
+      <TodoInfo />
+      {/* <article className="TodoInfo TodoInfo--completed">
         <h2 className="TodoInfo__title">HTML</h2>
+
+        <UserInfo />
 
         <a className="UserInfo" href="mailto:Sincere@april.biz">
           Leanne Graham
         </a>
-      </article>
+      </article> */}
 
       <article className="TodoInfo TodoInfo--completed">
         <h2 className="TodoInfo__title">CSS</h2>
