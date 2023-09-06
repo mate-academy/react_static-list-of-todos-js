@@ -41,7 +41,7 @@ export const App = ({ user }) => (
     <TodoList todos={todos} />
 
     <section className="TodoList">
-      <TodoInfo />
+      {/* <TodoInfo todo={todo} /> */}
       {/* <article className="TodoInfo TodoInfo--completed">
         <h2 className="TodoInfo__title">HTML</h2>
 
