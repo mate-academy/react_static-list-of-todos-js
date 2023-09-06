@@ -1,9 +1,12 @@
 import { TodoInfo } from '../TodoInfo/TodoInfo';
+import './TodoList.scss';
 
 export const TodoList = ({ todos }) => (
-  <section className="TodoList">
+  <ul className="TodoList">
     {todos.map(todo => (
-      <TodoInfo key={todo.id} todo={todo} />
+      <li key={todo.id}>
+        <TodoInfo todo={todo} />
+      </li>
     ))}
-  </section>
+  </ul>
 );
