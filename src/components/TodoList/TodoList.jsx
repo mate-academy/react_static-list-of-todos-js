@@ -1,4 +1,4 @@
-import { TodoInfo } from '../TodoInfo';
+import { TodoInfo } from '../TodoInfo/TodoInfo';
 
 export const TodoList = ({ todos }) => (
   <section className="TodoList">
