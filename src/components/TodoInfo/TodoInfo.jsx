@@ -2,26 +2,25 @@ import cn from 'classnames';
 import { UserInfo } from '../UserInfo';
 import './TodoInfo.scss';
 
-export const TodoInfo = ({ todo }) => (
-  <article className={cn('TodoInfo',
-    { 'TodoInfo--completed': todo.completed === true })}
-  >
+export const TodoInfo = ({ todo }) => {
+  const { id, completed, title } = todo;
 
-    <h2 className="TodoInfo__title">
-      {todo.title}
-    </h2>
+  return (
+    <article className={cn('TodoInfo',
+      { 'TodoInfo--completed': completed })}
+    >
 
-    {todo.user && (
+      <h2 className="TodoInfo__title">
+        {title}
+      </h2>
+
+      {todo.user && (
       <UserInfo
         user={todo.user}
-        key={todo.user.id}
+        key={id}
       />
-    )}
+      )}
 
-  </article>
-);
-
-/*
-<article className={`TodoInfo ${todo.completed === true ? 'TodoInfo--completed' : ''}`}
-  >
-*/
+    </article>
+  );
+};
