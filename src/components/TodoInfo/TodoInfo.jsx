@@ -3,7 +3,7 @@ import { UserInfo } from '../UserInfo';
 import './TodoInfo.scss';
 
 export const TodoInfo = ({ todo }) => {
-  const { id, completed, title } = todo;
+  const { user, completed, title } = todo;
 
   return (
     <article className={cn('TodoInfo',
@@ -14,12 +14,7 @@ export const TodoInfo = ({ todo }) => {
         {title}
       </h2>
 
-      {todo.user && (
-      <UserInfo
-        user={todo.user}
-        key={id}
-      />
-      )}
+      {user && <UserInfo user={user} />}
 
     </article>
   );
