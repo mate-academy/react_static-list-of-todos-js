@@ -1,5 +1,4 @@
 import { TodoInfo } from '../TodoInfo';
-import './TodoList.scss';
 
 export const TodoList = ({ todos }) => (
   <section className="TodoList">

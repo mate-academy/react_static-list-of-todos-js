@@ -8,7 +8,7 @@ export const TodoInfo = ({ todo }) => (
   >
 
     <h2 className="TodoInfo__title">
-      {todo.titile}
+      {todo.title}
     </h2>
 
     {todo.user && (
