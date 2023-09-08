@@ -3,7 +3,6 @@ import './App.scss';
 import todosFromServer from './api/todos.json';
 import usersFromServer from './api/users.json';
 import { TodoList } from './components/TodoList';
-import { UserInfo } from './components/UserInfo';
 
 function getUserById(userId) {
   return usersFromServer.find(user => user.id === userId)

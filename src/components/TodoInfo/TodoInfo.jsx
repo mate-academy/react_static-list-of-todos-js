@@ -2,7 +2,7 @@ import cn from 'classnames';
 import { UserInfo } from '../UserInfo';
 
 export const TodoInfo = ({ todo }) => (
-  <article className={cn('TodoInfo', {
+  <li className={cn('TodoInfo', {
     'TodoInfo--completed': todo.completed === true,
   })}
   >
@@ -11,6 +11,6 @@ export const TodoInfo = ({ todo }) => (
     </h2>
 
     {todo.user && <UserInfo user={todo.user} />}
-  </article>
+  </li>
 
 );
