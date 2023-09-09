@@ -15,5 +15,5 @@ export const TodoInfo = ({ todo }) => {
 
       {user && <UserInfo user={user} />}
     </li>
-  )
+  );
 };

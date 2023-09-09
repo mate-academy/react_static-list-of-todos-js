@@ -3,12 +3,10 @@ export const UserInfo = ({ user }) => {
 
   return (
     <>
-      {user.length !== 0 ? (
+      {user && (
         <a className="UserInfo" href={`mailto:${email}`}>
           {name}
         </a>
-      ) : (
-        ''
       )}
     </>
   );
