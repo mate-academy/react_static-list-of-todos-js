@@ -1,0 +1,18 @@
+.TodoInfo {
+  width: max-content;
+  padding: 8px;
+  margin: 15px 0;
+  border: 1px solid #000;
+  border-radius: 8px;
+  background-color: #fff;
+
+  &__title {
+    margin: 4px 0;
+    font-size: 18px;
+    color: #f44336;
+  }
+
+  &--completed &__title {
+    color: #080;
+  }
+}
