@@ -1,16 +1,16 @@
 import classNames from 'classnames';
 import { UserInfo } from '../UserInfo';
 
-// Add the required props
-export const TodoInfo = ({ todo }) => (
-  <article className={classNames('TodoInfo', {
-    'TodoInfo--completed': todo.completed,
-  })}
-  >
-    <h2 className="TodoInfo__title">
-      {todo.title}
-    </h2>
+export const TodoInfo = ({ todo }) => {
+  const { user, title, completed } = todo;
 
-    {todo.user && <UserInfo user={todo.user} />}
-  </article>
-);
+  return (
+    <article className={classNames('TodoInfo', {
+      'TodoInfo--completed': completed,
+    })}
+    >
+      <h2 className="TodoInfo__title">{title}</h2>
+      {user && <UserInfo user={user} />}
+    </article>
+  );
+};
