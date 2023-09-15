@@ -1,4 +1,14 @@
-// Add the required props
+import { TodoInfo } from '../TodoInfo';
+import { todos } from '../function';
+
 export const TodoList = () => (
-  <>TodoList markup</>
+  <>
+    <section className="TodoList">
+      {
+        todos.map(todo => (
+          <TodoInfo todo={todo} key={todo.id} />
+        ))
+      }
+    </section>
+  </>
 );
