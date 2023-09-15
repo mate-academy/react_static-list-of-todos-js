@@ -1,7 +1,6 @@
 import { TodoInfo } from '../TodoInfo';
-import { todos } from '../function';
 
-export const TodoList = () => (
+export const TodoList = ({ todos }) => (
   <>
     <section className="TodoList">
       {

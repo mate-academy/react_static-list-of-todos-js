@@ -16,8 +16,7 @@ export const TodoInfo = ({ todo }) => {
     <>
       <article className={`TodoInfo ${classNameTodo(completed)}`}>
         <h2 className="TodoInfo__title">{`${title}`}</h2>
-        <UserInfo user={user} />
-
+        {user && <UserInfo user={user} />}
       </article>
     </>
   );
