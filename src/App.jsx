@@ -17,8 +17,6 @@ export const todos = todosFromServer.map(todo => ({
 export const App = () => (
   <div className="App">
     <h1 className="App__title">Static list of todos</h1>
-
-    <TodoList props={todos} />
-
+    <TodoList todos={todos} />
   </div>
 );
