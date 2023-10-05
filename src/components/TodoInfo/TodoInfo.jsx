@@ -3,19 +3,19 @@ import { UserInfo } from '../UserInfo';
 
 export const TodoInfo = ({ todo }) => {
   const {
-    completed,
     title,
+    completed,
     user,
   } = todo;
-  console.log(todo);
+
+  const modifier = completed
+    ? 'TodoInfo--completed'
+    : '';
+
   return (
-    <article
-      className={completed ? 'TodoInfo TodoInfo--completed' : 'TodoInfo'}
-    >
+    <article className={`TodoInfo ${modifier}`}>
       <h2 className="TodoInfo__title">{title}</h2>
-
-      { user && <UserInfo user={user} />}
+      <UserInfo user={user} />
     </article>
-
   );
 };
