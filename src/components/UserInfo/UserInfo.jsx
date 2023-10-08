@@ -7,5 +7,3 @@ export const UserInfo = ({ user }) => (
     </a>
   </>
 );
-
-// {"mailto:${user.email}"}
