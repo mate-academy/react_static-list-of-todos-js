@@ -1,5 +1,4 @@
 import { TodoInfo } from '../TodoInfo';
-import { UserInfo } from '../UserInfo';
 
 export const TodoList = ({ todos }) => (
   <section className="TodoList">
