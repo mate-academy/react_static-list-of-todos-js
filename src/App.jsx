@@ -9,16 +9,18 @@ function getUserById(userId) {
 }
 
 export const todos = todosFromServer.map(todo => ({
-  ...todo, user: getUserById(todo.userId),
+  ...todo,
+  user: getUserById(todo.userId),
 }));
 
 export const App = () => (
   <div className="App">
-    <h1 className="App__title">Static list of todos</h1>
+    <h1 className="App__title">
+      Static list of todos
+    </h1>
+
     <section className="TodoList">
-      {todos.map(todo => (
-        <TodoList todos={todo} key={todo.id} />
-      ))}
+      <TodoList todos={todos} />
     </section>
   </div>
 );
