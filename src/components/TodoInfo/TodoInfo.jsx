@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { UserInfo } from '../UserInfo';
 
 export const TodoInfo = ({ todo }) => (
@@ -5,6 +6,17 @@ export const TodoInfo = ({ todo }) => (
     <h2 className="TodoInfo__title">
       {todo.title}
     </h2>
-    <UserInfo user={todo.user} />
+    {todo.user && <UserInfo user={todo.user} />}
   </article>
 );
+
+TodoInfo.propTypes = {
+  todo: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    completed: PropTypes.bool.isRequired,
+    user: PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      email: PropTypes.string.isRequired,
+    }).isRequired,
+  }).isRequired,
+};
