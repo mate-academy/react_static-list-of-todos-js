@@ -9,7 +9,8 @@ describe('Page', () => {
 
   it('should render todos in correct order', () => {
     cy.get('.TodoInfo__title').eq(0).should('have.text', 'delectus aut autem');
-    cy.get('.TodoInfo__title').eq(199).should('have.text', 'ipsam aperiam voluptates qui');
+    cy.get('.TodoInfo__title').eq(199).should('have.text',
+      'ipsam aperiam voluptates qui');
   });
 
   it('should render corresponding users', () => {
