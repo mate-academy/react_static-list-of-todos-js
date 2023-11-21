@@ -1,6 +1,5 @@
 // Add the required props
 import cn from 'classnames';
-// import { userInfo } from 'os';
 import { UserInfo } from '../UserInfo/UserInfo';
 import './TodoInfo.scss';
 
