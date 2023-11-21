@@ -7,7 +7,7 @@ export const TodoInfo = ({ todo }) => (
       'TodoInfo--completed': todo.completed === true,
     })}
   >
-    <h2 className="TodoInfo__title">HTML</h2>
+    <h2 className="TodoInfo__title">{todo.title}</h2>
 
     {todo.user && <UserInfo user={todo.user} />}
   </article>
