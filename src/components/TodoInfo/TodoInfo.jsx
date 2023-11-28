@@ -1,4 +1,25 @@
-// Add the required props
-export const TodoInfo = () => (
-  <>TodoInfo markup</>
-);
+import cn from 'classnames';
+import './TodoInfo.scss';
+import { UserInfo } from '../UserInfo';
+import usersFromServer from '../../api/users.json';
+
+export const TodoInfo = ({
+  userId,
+  completed,
+  title,
+}) => {
+  const user = usersFromServer.find(userItem => (
+    userItem.id === userId
+  ));
+
+  return (
+    <article className={cn('TodoInfo', {
+      'TodoInfo--completed': completed,
+    })}
+    >
+      <h2 className="TodoInfo__title">{title}</h2>
+
+      <UserInfo user={user} />
+    </article>
+  );
+};
