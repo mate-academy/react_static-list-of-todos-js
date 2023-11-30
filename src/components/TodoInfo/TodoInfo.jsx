@@ -3,11 +3,12 @@ import './TodoInfo.scss';
 import { UserInfo } from '../UserInfo';
 import usersFromServer from '../../api/users.json';
 
-export const TodoInfo = ({
-  userId,
-  completed,
-  title,
-}) => {
+export const TodoInfo = ({ todo }) => {
+  const {
+    userId,
+    completed,
+    title,
+  } = todo;
   const user = usersFromServer.find(userItem => (
     userItem.id === userId
   ));

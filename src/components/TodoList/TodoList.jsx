@@ -5,9 +5,7 @@ export const TodoList = ({ todos }) => (
     {todos.map(todo => (
       <TodoInfo
         key={todo.id}
-        userId={todo.userId}
-        completed={todo.completed}
-        title={todo.title}
+        todo={todo}
       />
     ))
     }
