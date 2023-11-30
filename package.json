@@ -6,7 +6,6 @@
   "author": "Mate Academy",
   "license": "GPL-3.0",
   "dependencies": {
-    "@cypress/react": "^5.12.4",
     "bulma": "^0.9.3",
     "classnames": "^2.3.1",
     "react": "^17.0.2",
@@ -14,8 +13,7 @@
     "react-scripts": "^4.0.3"
   },
   "devDependencies": {
-    "@cypress/webpack-dev-server": "^1.8.4",
-    "@mate-academy/cypress-tools": "^1.0.4",
+    "@mate-academy/cypress-tools": "^1.0.5",
     "@mate-academy/eslint-config-react": "^0.0.11",
     "@mate-academy/eslint-config-react-typescript": "*",
     "@mate-academy/scripts": "^1.2.12",
@@ -44,7 +42,7 @@
     "lint-css": "mate-scripts lint -s",
     "lint": "npm run lint-js && npm run lint-css",
     "update": "mate-scripts update",
-    "postinstall": "npm run update && cypress verify",
+    "postinstall": "npm run update",
     "predeploy": "npm run build",
     "deploy": "mate-scripts deploy"
   },
