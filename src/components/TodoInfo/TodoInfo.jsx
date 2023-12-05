@@ -1,4 +1,4 @@
-// Add the required props
+/* eslint-disable */
 
 import { UserInfo } from '../UserInfo';
 

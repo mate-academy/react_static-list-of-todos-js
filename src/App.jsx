@@ -2,7 +2,7 @@ import './App.scss';
 
 import todosFromServer from './api/todos.json';
 import usersFromServer from './api/users.json';
-import { TodoInfo } from './components/TodoInfo';
+import { TodoInfo } from './components/TodoInfo/TodoInfo';
 
 function getUserById(userId) {
   return usersFromServer.find(user => user.id === userId)
