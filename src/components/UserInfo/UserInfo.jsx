@@ -8,7 +8,7 @@ function checkUser(user) {
 }
 
 export const UserInfo = ({ user }) => (
-  <a className="UserInfo" href={checkUser(user.email)}>
+  <a className="UserInfo" href={`mailto:${checkUser(user.email)}`}>
     {checkUser(user.name)}
   </a>
 );
