@@ -7,10 +7,9 @@ export const TodoInfo = ({ todo }) => (
         ? 'TodoInfo TodoInfo--completed'
         : 'TodoInfo'
     }
-    key={todo.id}
   >
     <h2 className="TodoInfo__title">{todo.title}</h2>
 
-    {todo.user && <UserInfo user={todo.user} />}
+    {todo.user && <UserInfo user={todo.user} key={todo.user.id} />}
   </article>
 );
