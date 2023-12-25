@@ -1,0 +1,22 @@
+$border-color: #000;
+$title-color: #f00;
+$completed-title-color: #080;
+
+.TodoInfo {
+  width: max-content;
+  padding: 8px;
+  margin: 12px 0;
+  border: 1px solid $border-color;
+  border-radius: 8px;
+  background-color: antiquewhite;
+
+  &__title {
+    margin: 4px 0;
+    font-size: inherit;
+    color: $title-color;
+  }
+
+  &--completed &__title {
+    color: $completed-title-color;
+  }
+}
