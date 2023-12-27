@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../node_modules/bulma/sass/layout/section.sass","section.css","../../node_modules/bulma/sass/utilities/mixins.sass"],"names":[],"mappings":"AAOA;EACE,oBANgB;ACAlB;ACoHE;EF/GF;IAII,kBARsB;ECGxB;EDOE;IACE,oBAVmB;ECKvB;EDME;IACE,mBAXkB;ECOtB;AACF","file":"section.css"}
