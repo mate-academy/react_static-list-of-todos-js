@@ -1,12 +1,10 @@
 import React from 'react';
-import TodoInfo from './components/TodoInfo/TodoInfo';
+import { TodoInfo } from '../TodoInfo/TodoInfo';
 
-const TodoList = ({ todos }) => (
+export const TodoList = ({ todos }) => (
   <section className="TodoList">
     {todos.map(todo => (
       <TodoInfo key={todo.id} todo={todo} />
     ))}
   </section>
 );
-
-export default TodoList;

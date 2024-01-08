@@ -1,6 +1,6 @@
 import React from 'react';
 
-const TodoInfo = ({ todo }) => (
+export const TodoInfo = ({ todo }) => (
   <article className={`TodoInfo ${todo.completed ? 'TodoInfo--completed' : ''}`}>
     <h2 className="TodoInfo__title">{todo.title}</h2>
     {todo.user && (
@@ -10,5 +10,3 @@ const TodoInfo = ({ todo }) => (
     )}
   </article>
 );
-
-export default TodoInfo;
