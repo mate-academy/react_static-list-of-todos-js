@@ -2,6 +2,7 @@
 import { UserInfo } from '../UserInfo';
 
 export const TodoInfo = ({ todo }) => (
+
   <article
     className={todo.completed ? 'TodoInfo TodoInfo--completed' : 'TodoInfo'}
   >

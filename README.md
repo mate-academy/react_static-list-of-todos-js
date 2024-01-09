@@ -11,7 +11,6 @@ Split the given `App` markup into component following the rules:
 - `TodoInfo` takes a `todo` and renders its details;
 - make sure that the `TodoInfo` has a `TodoInfo--completed` modifier for all completed todos;
 - `UserInfo` takes a `user` and renders the details (use it only if `todo.user` exists).
-
 ## Instructions
 
 - Implement a solution following the [React task guideline](https://github.com/mate-academy/react_task-guideline#react-tasks-guideline).
