@@ -1,6 +1,10 @@
 // Add the required props
-export const UserInfo = ({ todo }) => (
-  <a className="UserInfo" href={`mailto:${todo.user.email}`}>
-    {todo.user.username}
-  </a>
-);
+export const UserInfo = ({ user }) => {
+  const { name, email } = user;
+
+  return (
+    <a className="UserInfo" href={`mailto:${email}`}>
+      { name }
+    </a>
+  );
+};
