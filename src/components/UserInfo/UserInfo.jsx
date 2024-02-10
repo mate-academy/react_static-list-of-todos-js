@@ -1,4 +1,11 @@
-// Add the required props
-export const UserInfo = () => (
-  <>UserInfo markup</>
+/* eslint-disable linebreak-style */
+
+export const UserInfo = ({ user }) => (
+  <a
+    href={`mailto:${user.email}`}
+    className="UserInfo"
+    key={user.id}
+  >
+    {user.name}
+  </a>
 );
