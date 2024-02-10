@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 import './App.scss';
 import { TodoList } from './components/TodoList';
 import todosFromServer from './api/todos.json';
