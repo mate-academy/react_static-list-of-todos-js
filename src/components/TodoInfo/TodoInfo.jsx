@@ -1,4 +1,5 @@
 // Add the required props
+
 import { UserInfo } from '../UserInfo';
 
 export const TodoInfo = ({ todo }) => (
@@ -10,3 +11,5 @@ export const TodoInfo = ({ todo }) => (
     <UserInfo user={todo.user} />
   </article>
 );
+
+export const TodoInfo = () => <>TodoInfo markup</>;
