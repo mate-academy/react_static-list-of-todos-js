@@ -1,3 +1,4 @@
+
 import { TodoInfo } from '../TodoInfo';
 
 export const TodoList = ({ todos }) => (
@@ -7,3 +8,4 @@ export const TodoList = ({ todos }) => (
     ))}
   </section>
 );
+
