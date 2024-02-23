@@ -4,5 +4,6 @@ export const UserInfo = ({ user }) => (
     href={`mailto:${user.email}`}
   >
     {`${user.name}`}
+
   </a>
 );
