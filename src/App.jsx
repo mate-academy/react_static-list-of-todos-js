@@ -12,42 +12,28 @@ export const todos = todosFromServer.map(todo => ({
   user: getUserById(todo.userId),
 }));
 
+const TodoInfo = () => {};
+
+const TodoList = ({ todo }) => (
+  <section className="TodoList">
+    {todo.map(element => (
+      <article
+        key={element.id}
+        className={`TodoInfo ${element.completed ? 'TodoInfo--completed' : ''}`}
+      >
+        <h2 className="TodoInfo__title">${element.title}</h2>
+
+        <a className="UserInfo" href={`mailto:${element.user.email}`}>
+          {element.user.name}
+        </a>
+      </article>
+    ))}
+  </section>
+);
+
 export const App = () => (
   <div className="App">
     <h1 className="App__title">Static list of todos</h1>
-
-    <section className="TodoList">
-      <article className="TodoInfo TodoInfo--completed">
-        <h2 className="TodoInfo__title">HTML</h2>
-
-        <a className="UserInfo" href="mailto:Sincere@april.biz">
-          Leanne Graham
-        </a>
-      </article>
-
-      <article className="TodoInfo TodoInfo--completed">
-        <h2 className="TodoInfo__title">CSS</h2>
-
-        <a className="UserInfo" href="mailto:Sincere@april.biz">
-          Leanne Graham
-        </a>
-      </article>
-
-      <article className="TodoInfo TodoInfo--completed">
-        <h2 className="TodoInfo__title">JS</h2>
-
-        <a className="UserInfo" href="mailto:Shanna@melissa.tv">
-          Ervin Howell
-        </a>
-      </article>
-
-      <article className="TodoInfo">
-        <h2 className="TodoInfo__title">React</h2>
-
-        <a className="UserInfo" href="mailto:Nathan@yesenia.net">
-          Clementine Bauch
-        </a>
-      </article>
-    </section>
+    <TodoList todo={todos} />
   </div>
 );
