@@ -2,7 +2,7 @@
 import cn from 'classnames';
 import { UserInfo } from '../UserInfo/UserInfo';
 
-export const TodoInfo = ({ todo, users }) => (
+export const TodoInfo = ({ todo }) => (
   <>
     <article
       className={cn('TodoInfo', {
@@ -11,7 +11,7 @@ export const TodoInfo = ({ todo, users }) => (
     >
       <h2 className="TodoInfo__title">{todo.title}</h2>
 
-      <UserInfo user={users} />
+      <UserInfo user={todo.user} />
     </article>
   </>
 );
