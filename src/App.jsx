@@ -15,6 +15,6 @@ export const todos = todosFromServer.map(todo => ({
 
 export const App = () => (
   <div className="App">
-    <TodoList todos={todosFromServer} users={usersFromServer} />
+    <TodoList todos={todos} />
   </div>
 );
