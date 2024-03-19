@@ -2,7 +2,7 @@
 /* eslint-disable react/jsx-filename-extension */
 
 import React from 'react';
-import { mount } from '@cypress/react';
+import { mount } from '@cypress/react18';
 import { TodoInfo } from './TodoInfo';
 
 describe('TodoInfo', () => {
@@ -79,10 +79,8 @@ describe('TodoInfo', () => {
 
       mount(<TodoInfo todo={todo48} />);
 
-      cy.get('.TodoInfo__title').should(
-        'have.text',
-        'sit reprehenderit omnis quia',
-      );
+      cy.get('.TodoInfo__title')
+        .should('have.text', 'sit reprehenderit omnis quia');
 
       cy.get('.TodoInfo').should('have.class', 'TodoInfo--completed');
       cy.get('.UserInfo').should('have.text', 'Clementine Bauch');
