@@ -14,6 +14,18 @@ Split the given `App` markup into component following the rules:
 
 ## Instructions
 - Install Prettier Extention and use this [VSCode settings](https://mate-academy.github.io/fe-program/tools/vscode/settings.json) to enable format on save.
-- Implement a solution following the [React task guideline](https://github.com/mate-academy/react_task-guideline#react-tasks-guideline).
+- Implement a solution following the [React task guideline](https://github.com/mate-acad›emy/react_task-guideline#react-tasks-guideline).
 - Open one more terminal and run tests with `npm test` to ensure your solution is correct.
 - Replace `<your_account>` with your Github username in the [DEMO LINK](https://<your_account>.github.io/react_static-list-of-todos-js/) and add it to the PR description.
+
+Вам предоставляются массивы todosFromServer и usersFromServer с необходимыми данными.
+
+Также к каждой задаче в массиве todos прикреплен соответствующий пользователь (см. App.jsx).
+
+Разделите данную разметку App на компоненты, следуя правилам:
+
+- не меняйте имена CSS-классов, они используются в тестах;
+- TodoList принимает `todos` и отображает одну TodoInfo для каждой задачи;
+- TodoInfo принимает `todo` и отображает ее детали;
+- убедитесь, что TodoInfo имеет модификатор TodoInfo--completed для всех завершенных задач;
+- `UserInfo` принимает `user` и отображает детали (используйте его, только если `todo.user` существует).
