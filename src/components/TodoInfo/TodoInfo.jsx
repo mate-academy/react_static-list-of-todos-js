@@ -5,7 +5,6 @@ import './TodoInfo.scss';
 import { UserInfo } from '../UserInfo/UserInfo';
 
 export const TodoInfo = ({ todo }) => {
-
   const { id, title, completed, user } = todo;
 
   return (
