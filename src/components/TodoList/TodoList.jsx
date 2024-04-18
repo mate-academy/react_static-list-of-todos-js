@@ -1,4 +1,3 @@
-import { todos } from '../../App';
 import { TodoInfo } from '../TodoInfo/TodoInfo';
 
 export const TodoList = ({ todos }) => (
