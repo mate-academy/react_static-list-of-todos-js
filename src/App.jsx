@@ -12,11 +12,36 @@ export const todos = todosFromServer.map(todo => ({
   user: getUserById(todo.userId),
 }));
 
+export const TodoList = () => (
+  <section className="TodoList">
+    {/* <article className="TodoInfo TodoInfo--completed">
+      <h2 className="TodoInfo__title">HTML</h2>
+
+      <a className="UserInfo" href="mailto:Sincere@april.biz">
+        Leanne Graham
+      </a>
+    </article> */}
+    {/* {console.log(todos)} */}
+    {todos.map(todo => {
+      const completed = todo.completed ? ' TodoInfo--completed' : '';
+      return (
+        <article key={todo.id} className={`TodoInfo${completed}`}>
+          <h2 className="TodoInfo__title">{todo.title}</h2>
+
+          <a className="UserInfo" href={todo.user.email}>
+            {todo.user.name}
+          </a>
+        </article>
+      );
+    })}
+  </section>
+);
+
 export const App = () => (
   <div className="App">
     <h1 className="App__title">Static list of todos</h1>
 
-    <section className="TodoList">
+    {/* <section className="TodoList">
       <article className="TodoInfo TodoInfo--completed">
         <h2 className="TodoInfo__title">HTML</h2>
 
@@ -48,6 +73,7 @@ export const App = () => (
           Clementine Bauch
         </a>
       </article>
-    </section>
+    </section> */}
+    <TodoList />
   </div>
 );
