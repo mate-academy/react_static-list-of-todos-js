@@ -13,6 +13,12 @@ export const todos = todosFromServer.map(todo => ({
   user: getUserById(todo.userId),
 }));
 
+export const UserInfo = ({ user }) => (
+  <a className="UserInfo" href={user.email}>
+    {user.name}
+  </a>
+);
+
 export const TodoInfo = ({ todo }) => {
   const completed = todo.completed ? ' TodoInfo--completed' : '';
 
@@ -20,9 +26,10 @@ export const TodoInfo = ({ todo }) => {
     <article className={`TodoInfo${completed}`}>
       <h2 className="TodoInfo__title">{todo.title}</h2>
 
-      <a className="UserInfo" href={todo.user.email}>
+      {/* <a className="UserInfo" href={todo.user.email}>
         {todo.user.name}
-      </a>
+      </a> */}
+      <UserInfo user={todo.user} />
     </article>
   );
 };
