@@ -2,6 +2,7 @@ import './App.scss';
 
 import todosFromServer from './api/todos.json';
 import usersFromServer from './api/users.json';
+// import { TodoInfo } from './components/TodoInfo/TodoInfo';
 
 function getUserById(userId) {
   return usersFromServer.find(user => user.id === userId) || null;
@@ -12,10 +13,24 @@ export const todos = todosFromServer.map(todo => ({
   user: getUserById(todo.userId),
 }));
 
+export const TodoInfo = ({ todo }) => {
+  const completed = todo.completed ? ' TodoInfo--completed' : '';
+
+  return (
+    <article className={`TodoInfo${completed}`}>
+      <h2 className="TodoInfo__title">{todo.title}</h2>
+
+      <a className="UserInfo" href={todo.user.email}>
+        {todo.user.name}
+      </a>
+    </article>
+  );
+};
+
 export const TodoList = ({ todosList }) => (
   <section className="TodoList">
     {/* {console.log(todos)} */}
-    {todosList.map(todo => {
+    {/* {todosList.map(todo => {
       const completed = todo.completed ? ' TodoInfo--completed' : '';
 
       return (
@@ -27,7 +42,10 @@ export const TodoList = ({ todosList }) => (
           </a>
         </article>
       );
-    })}
+    })} */}
+    {todosList.map(todo => (
+      <TodoInfo key={todo.id} todo={todo} />
+    ))}
   </section>
 );
 
@@ -68,6 +86,6 @@ export const App = () => (
         </a>
       </article>
     </section> */}
-    <TodoList todos={todos} />
+    <TodoList todosList={todos} />
   </div>
 );
