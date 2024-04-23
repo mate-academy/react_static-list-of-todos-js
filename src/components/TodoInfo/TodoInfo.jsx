@@ -1,4 +1,4 @@
-import { UserInfo } from '../UserInfo/UserInfo';
+import { UserInfo } from '../UserInfo';
 
 export const TodoInfo = ({ todo }) => {
   const completed = todo.completed ? ' TodoInfo--completed' : '';
