@@ -1,7 +1,7 @@
 import React from 'react';
 import UserInfo from '../UserInfo/UserInfo';
 
-const TodoInfo = ({ todo }) => (
+export const TodoInfo = ({ todo }) => (
   <article
     className={`TodoInfo ${todo.completed ? 'TodoInfo--completed' : ''}`}
   >
@@ -9,5 +9,3 @@ const TodoInfo = ({ todo }) => (
     <UserInfo user={todo.user} />
   </article>
 );
-
-export default TodoInfo;
