@@ -1,4 +1,6 @@
-import { UserInfo } from '../UserInfo/UserInfo';
+import './TodoInfo.scss';
+
+import { UserInfo } from '../UserInfo';
 // Add the required props
 export const TodoInfo = ({ todo }) => (
   <article className={`TodoInfo ${todo.completed && 'TodoInfo--completed'}`}>

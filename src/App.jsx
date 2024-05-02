@@ -1,5 +1,5 @@
 import './App.scss';
-import { TodoList } from './components/TodoList/TodoList';
+import { TodoList } from './components/TodoList';
 
 import todosFromServer from './api/todos.json';
 import usersFromServer from './api/users.json';
