@@ -1,4 +1,4 @@
-import { UserInfo } from "../UserInfo/UserInfo";
+import { UserInfo } from '../UserInfo/UserInfo';
 
 export const TodoInfo = ({ todo }) => {
   return (
