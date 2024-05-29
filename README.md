@@ -10,7 +10,7 @@ Split the given `App` markup into component following the rules:
 - `TodoList` takes the `todos` and renders one `TodoInfo` per a `todo`;
 - `TodoInfo` takes a `todo` and renders its details;
 - make sure that the `TodoInfo` has a `TodoInfo--completed` modifier for all completed todos;
-- `UserInfo` takes a `user` and renders the details (use it only if `todo.user` exists).
+- `UserInfo` takes a `user` and renders the details (use it only if `todo.user` exists)
 
 ## Instructions
 - Install Prettier Extention and use this [VSCode settings](https://mate-academy.github.io/fe-program/tools/vscode/settings.json) to enable format on save.
