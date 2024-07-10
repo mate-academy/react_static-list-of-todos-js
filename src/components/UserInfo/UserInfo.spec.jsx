@@ -17,7 +17,6 @@ describe('UserInfo', () => {
 
     cy.get('.UserInfo').should('have.text', 'Leanne Graham');
   });
-
   it('should have a link with mailto: user.email', () => {
     const user1 = {
       id: 1,
