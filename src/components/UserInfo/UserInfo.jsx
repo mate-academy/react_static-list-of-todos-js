@@ -1,9 +1,7 @@
-export const UserInfo = ({ users }, todo) => (
+export const UserInfo = ({ user, todo }) => (
   <>
-    {users.map(user => (
-      <a className="UserInfo" href={user.email} key={user.id}>
-        {`${user.id === todo.userId ? user.name : ''}`}
-      </a>
-    ))}
+    <a className="UserInfo" href={user.email} key={user.id}>
+      {`${user.id === todo.userId ? user.name : ''}`}
+    </a>
   </>
 );

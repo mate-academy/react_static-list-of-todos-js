@@ -1,15 +1,10 @@
-import { UserInfo } from '../UserInfo/UserInfo';
-
 // Add the required props
-export const TodoInfo = ({ todos }, { users }) => (
+export const TodoInfo = ({ todo }) => (
   <>
-    {todos.map(todo => (
-      <article
-        className={`TodoInfo ${todo.completed === true ? 'TodoInfo--completed' : ''}`}
-      >
-        <h2 className="TodoInfo__title">{todo.title}</h2>
-        <UserInfo users={users} todo={todo} />
-      </article>
-    ))}
+    <article
+      className={`TodoInfo ${todo.completed === true ? 'TodoInfo--completed' : ''}`}
+    >
+      <h2 className="TodoInfo__title">{todo.title}</h2>
+    </article>
   </>
 );
