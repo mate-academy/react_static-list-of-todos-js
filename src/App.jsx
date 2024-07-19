@@ -17,6 +17,6 @@ export const App = () => (
   <div className="App">
     <h1 className="App__title">Not a static list of todos</h1>
 
-    <TodoList todos={todosFromServer} users={usersFromServer} />
+    <TodoList todos={todos} />
   </div>
 );
