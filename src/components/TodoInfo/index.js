@@ -1,1 +1,1 @@
-export * from './TodoInfo';
+export { default } from './TodoInfo';

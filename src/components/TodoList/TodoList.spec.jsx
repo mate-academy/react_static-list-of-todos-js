@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { mount } from '@cypress/react18';
-import { TodoList } from './TodoList';
+import TodoList from './TodoList';
 
 describe('TodoList', () => {
   describe('', () => {
