@@ -1,14 +1,20 @@
-import React from 'react';
-import TodoList from './components/TodoList';
-import todos from './api/todos.json';
-import users from './api/users.json';
+import './App.scss';
+import todosFromServer from './api/todos.json';
+import usersFromServer from './api/users.json';
+import { TodoList } from './components/TodoList';
 
-const App = () => {
-  return (
-    <div className="App">
-      <TodoList todos={todos} users={users} />
-    </div>
-  );
-};
+function getUserById(userId) {
+  return usersFromServer.find(user => user.id === userId) || null;
+}
 
-export default App;
+export const todos = todosFromServer.map(todo => ({
+  ...todo,
+  user: getUserById(todo.userId),
+}));
+
+export const App = () => (
+  <div className="App">
+    <h1 className="App__title">Static list of todos</h1>
+    <TodoList todos={todos} />
+  </div>
+);
