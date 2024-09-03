@@ -1,5 +1,4 @@
 import { TodoInfo } from '../TodoInfo/TodoInfo';
-import todosFromServer from '../../api/todos.json';
 
 export const TodoList = ({ todos }) => {
   return (
