@@ -1,12 +1,14 @@
 import { UserInfo } from '../UserInfo/UserInfo';
+import classNames from 'classnames';
 // Add the required props
 export const TodoInfo = ({ todo }) => (
-  <article className="TodoInfo TodoInfo--completed">
+  <article
+    className={classNames('TodoInfo', {
+      'TodoInfo--completed': todo.completed,
+    })}
+  >
     <h2
       className="TodoInfo__title"
-      style={{
-        color: !todo.completed && 'red',
-      }}
     >
       {todo.title}
     </h2>
