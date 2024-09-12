@@ -1,2 +1,7 @@
-// Add the required props
-export const UserInfo = () => <>UserInfo markup</>;
+import React from 'react';
+
+export const UserInfo = ({ user: { name, email } }) => (
+  <a className="UserInfo" href={`mailto:${email}`}>
+    {name}
+  </a>
+);
