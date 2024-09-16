@@ -1,2 +1,11 @@
+/* eslint-disable prettier/prettier */
 // Add the required props
-export const UserInfo = () => <>UserInfo markup</>;
+import './UserInfo.scss';
+
+export const UserInfo = ({ user }) => (
+  <>
+    <a key={user.id} className="UserInfo" href={`mailto:${user.email}`}>
+      {user.name}
+    </a>
+  </>
+);
