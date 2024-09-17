@@ -46,3 +46,4 @@ describe('UserInfo', () => {
       .should('have.attr', 'href', 'mailto:Shanna@melissa.tv');
   });
 });
+
