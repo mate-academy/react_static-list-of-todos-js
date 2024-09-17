@@ -4,7 +4,7 @@ export function TodoList({ todos }) {
   return (
     <section className="TodoList">
       {todos.map(todoItem => (
-        <TodoInfo item={todoItem} key={todoItem.id} />
+        <TodoInfo todo={todoItem} key={todoItem.id} />
       ))}
     </section>
   );

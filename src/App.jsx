@@ -1,8 +1,9 @@
-import './App.scss';
-
 import todosFromServer from './api/todos.json';
 import usersFromServer from './api/users.json';
+
 import { TodoList } from './components/TodoList/TodoList';
+
+import './App.scss';
 
 function getUserById(userId) {
   return usersFromServer.find(person => person.id === userId) || null;

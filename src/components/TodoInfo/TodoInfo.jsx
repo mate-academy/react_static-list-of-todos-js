@@ -1,9 +1,11 @@
 import cn from 'classname';
-import './TodoInfo.scss';
+
 import { UserInfo } from '../UserInfo/UserInfo';
 
-export function TodoInfo({ item }) {
-  const { completed, title, user } = item;
+import './TodoInfo.scss';
+
+export function TodoInfo({ todo }) {
+  const { completed, title, user } = todo;
 
   return (
     <article
