@@ -1,11 +1,11 @@
 import { TodoInfo } from '../TodoInfo';
 
-export const TodoList = ({ todos, users }) => {
+export const TodoList = ({ todos }) => {
   return (
     <section className="TodoList">
-      {todos.map(todo => (
-        <TodoInfo todo={todo} users={users} key={todo.id} />
-      ))}
+      {todos.map(todo => {
+        return <TodoInfo todo={todo} key={todo.id} />;
+      })}
     </section>
   );
 };
