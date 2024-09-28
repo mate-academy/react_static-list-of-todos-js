@@ -2,6 +2,7 @@ import './App.scss';
 
 import todosFromServer from './api/todos.json';
 import usersFromServer from './api/users.json';
+import { TodoList } from './components/TodoList/TodoList';
 
 function getUserById(userId) {
   return usersFromServer.find(user => user.id === userId) || null;
@@ -11,22 +12,24 @@ export const todos = todosFromServer.map(todo => ({
   ...todo,
   user: getUserById(todo.userId),
 }));
+// eslint-disable-next-line no-console
+console.log(todos);
 
 export const App = () => (
   <div className="App">
     <h1 className="App__title">Static list of todos</h1>
-
-    <section className="TodoList">
+    <TodoList todos={todos} />
+    {/* <section className="TodoList">
       <article className="TodoInfo TodoInfo--completed">
-        <h2 className="TodoInfo__title">HTML</h2>
+      <h2 className="TodoInfo__title">HTML</h2>
 
-        <a className="UserInfo" href="mailto:Sincere@april.biz">
-          Leanne Graham
-        </a>
+      <a className="UserInfo" href="mailto:Sincere@april.biz">
+      Leanne Graham
+      </a>
       </article>
 
       <article className="TodoInfo TodoInfo--completed">
-        <h2 className="TodoInfo__title">CSS</h2>
+      <h2 className="TodoInfo__title">CSS</h2>
 
         <a className="UserInfo" href="mailto:Sincere@april.biz">
           Leanne Graham
@@ -48,6 +51,6 @@ export const App = () => (
           Clementine Bauch
         </a>
       </article>
-    </section>
+    </section> */}
   </div>
 );
