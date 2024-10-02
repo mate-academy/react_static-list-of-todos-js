@@ -3,3 +3,5 @@ export const UserInfo = ({ user }) => (
     <p>{user.name}</p>
   </a>
 );
+
+export default UserInfo;
