@@ -1,2 +1,14 @@
+import { UserInfo } from '../UserInfo/UserInfo';
+
 // Add the required props
-export const TodoInfo = () => <>TodoInfo markup</>;
+export const TodoInfo = ({ todo }) => {
+  const { id, completed, title, user } = todo;
+
+  return (
+    <article className={`TodoInfo ${completed && 'TodoInfo--completed'}`}>
+      <h2 className="TodoInfo__title">{title}</h2>
+
+      <UserInfo user={user} key={id} />
+    </article>
+  );
+};
