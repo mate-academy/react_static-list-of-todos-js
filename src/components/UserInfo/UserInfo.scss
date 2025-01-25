@@ -1,0 +1,15 @@
+.UserInfo {
+  font-style: italic;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.UserInfo__name {
+  font-weight: bold;
+}
+
+.UserInfo__email {
+  color: blue;
+  text-decoration: underline;
+}
