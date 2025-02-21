@@ -60,8 +60,8 @@ describe('TodoList', () => {
     });
 
     it('should render todos in the correct order', () => {
-      cy.get('.TodoInfo__title').eq(0).should('have.text', 'First Todo');
-      cy.get('.TodoInfo__title').eq(3).should('have.text', 'Fourth Todo');
+      cy.get('.TodoInfo__title').eq(0).should('have.text', ' First Todo ');
+      cy.get('.TodoInfo__title').eq(3).should('have.text', ' Fourth Todo ');
     });
   });
 

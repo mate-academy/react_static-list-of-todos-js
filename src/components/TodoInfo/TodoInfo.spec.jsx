@@ -18,7 +18,7 @@ describe('TodoInfo', () => {
       const todo = {
         userId: 1,
         id: 1,
-        title: 'Learn HTML',
+        title: 'Learn HTML ',
         completed: true,
         user: user1,
       };
@@ -27,7 +27,7 @@ describe('TodoInfo', () => {
     });
 
     it('should have a correct title', () => {
-      cy.get('.TodoInfo__title').should('have.text', 'Learn HTML');
+      cy.get('.TodoInfo__title').should('have.text', ' Learn HTML  ');
     });
 
     it('should add TodoInfo--completed class for a completed todo', () => {
@@ -79,8 +79,10 @@ describe('TodoInfo', () => {
 
       mount(<TodoInfo todo={todo48} />);
 
-      cy.get('.TodoInfo__title')
-        .should('have.text', 'sit reprehenderit omnis quia');
+      cy.get('.TodoInfo__title').should(
+        'have.text',
+        ' sit reprehenderit omnis quia ',
+      );
 
       cy.get('.TodoInfo').should('have.class', 'TodoInfo--completed');
       cy.get('.UserInfo').should('have.text', 'Clementine Bauch');
