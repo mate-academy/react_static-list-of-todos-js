@@ -10,6 +10,7 @@
     "bulma": "^1.0.1",
     "classnames": "^2.5.1",
     "react": "^18.3.1",
+    "react_static-list-of-todos-js": "file:",
     "react-dom": "^18.3.1"
   },
   "devDependencies": {
