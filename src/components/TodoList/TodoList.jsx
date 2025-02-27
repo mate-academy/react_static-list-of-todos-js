@@ -1,2 +1,10 @@
-// Add the required props
-export const TodoList = () => <>TodoList markup</>;
+// Import to do info prop.s
+import { TodoInfo } from '../TodoInfo/TodoInfo';
+
+export const TodoList = ({ todos }) => (
+  <section className="TodoList">
+    {todos.map(todo => (
+      <TodoInfo todo={todo} key={todo.id} />
+    ))}
+  </section>
+);
