@@ -1,53 +1,31 @@
+import React from 'react';
+import TodoList from './TodoList';
 import './App.scss';
 
-import todosFromServer from './api/todos.json';
-import usersFromServer from './api/users.json';
+const todosFromServer = [
+    { id: 1, title: 'Learn React', completed: true, userId: 1 },
+    { id: 2, title: 'Develop Todo App', completed: false, userId: 2 },
+    { id: 3, title: 'Test Application', completed: true, userId: 1 },
+    // Add more todos if needed
+];
 
-function getUserById(userId) {
-  return usersFromServer.find(user => user.id === userId) || null;
+const usersFromServer = [
+    { id: 1, name: 'John Doe' },
+    { id: 2, name: 'Jane Smith' },
+    // Add more users if needed
+];
+
+// Attach users to todos
+todosFromServer.forEach(todo => {
+    todo.user = usersFromServer.find(user => user.id === todo.userId);
+});
+
+function App() {
+    return (
+        <div className="App">
+            <TodoList todos={todosFromServer} />
+        </div>
+    );
 }
 
-export const todos = todosFromServer.map(todo => ({
-  ...todo,
-  user: getUserById(todo.userId),
-}));
-
-export const App = () => (
-  <div className="App">
-    <h1 className="App__title">Static list of todos</h1>
-
-    <section className="TodoList">
-      <article className="TodoInfo TodoInfo--completed">
-        <h2 className="TodoInfo__title">HTML</h2>
-
-        <a className="UserInfo" href="mailto:Sincere@april.biz">
-          Leanne Graham
-        </a>
-      </article>
-
-      <article className="TodoInfo TodoInfo--completed">
-        <h2 className="TodoInfo__title">CSS</h2>
-
-        <a className="UserInfo" href="mailto:Sincere@april.biz">
-          Leanne Graham
-        </a>
-      </article>
-
-      <article className="TodoInfo TodoInfo--completed">
-        <h2 className="TodoInfo__title">JS</h2>
-
-        <a className="UserInfo" href="mailto:Shanna@melissa.tv">
-          Ervin Howell
-        </a>
-      </article>
-
-      <article className="TodoInfo">
-        <h2 className="TodoInfo__title">React</h2>
-
-        <a className="UserInfo" href="mailto:Nathan@yesenia.net">
-          Clementine Bauch
-        </a>
-      </article>
-    </section>
-  </div>
-);
+export default App;
