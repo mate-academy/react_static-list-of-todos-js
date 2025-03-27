@@ -1,3 +1,5 @@
+[DEMO LINK](https://vkrasnovyd.github.io/react_static-list-of-todos-js/)
+
 # React Static List of TODOs
 
 You are given `todosFromServer` and `usersFromServer` arrays with the required data.
