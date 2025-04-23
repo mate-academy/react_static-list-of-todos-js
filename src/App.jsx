@@ -1,5 +1,4 @@
 import './App.scss';
-import cn from 'classnames';
 
 import todosFromServer from './api/todos.json';
 import usersFromServer from './api/users.json';
