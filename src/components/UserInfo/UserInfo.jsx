@@ -1,2 +1,5 @@
-// Add the required props
-export const UserInfo = () => <>UserInfo markup</>;
+import React from 'react';
+
+export const UserInfo = ({ user }) => {
+  return <div className="UserInfo">{user.name}</div>;
+};
