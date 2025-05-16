@@ -10,13 +10,15 @@
     "bulma": "^1.0.1",
     "classnames": "^2.5.1",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "rollup": "^4.40.2"
   },
   "devDependencies": {
     "@cypress/react18": "^2.0.1",
     "@mate-academy/scripts": "^1.8.5",
     "@mate-academy/stylelint-config": "*",
     "@vitejs/plugin-react": "^4.3.1",
+    "cross-env": "^7.0.3",
     "cypress": "^13.13.0",
     "eslint": "^8.57.0",
     "eslint-config-airbnb": "^19.0.4",
@@ -38,9 +40,9 @@
     "vite": "^5.3.1"
   },
   "scripts": {
-    "start": "mate-scripts start -l",
+    "start": "cross-env NO_COLOR=1 mate-scripts start -l",
     "build": "mate-scripts build",
-    "test": "mate-scripts test -l",
+    "test": "cross-env NO_COLOR=1 mate-scripts test -l",
     "style-format": "npx stylelint 'src/**/*.scss' --fix --allow-empty-input",
     "lint-js": "mate-scripts lint -j",
     "lint-css": "mate-scripts lint -s",
