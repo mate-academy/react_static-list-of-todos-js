@@ -1,0 +1,16 @@
+.UserInfo {
+  font-style: italic;
+  display: inline-block;
+  color: #7f8c8d;
+  font-size: 0.9rem;
+  text-decoration: none;
+  padding: 0.3rem 0.6rem;
+  background: #f5f5f5;
+  border-radius: 4px;
+  transition: all 0.2s;
+
+  &:hover {
+    background: #3498db;
+    color: white;
+  }
+}
