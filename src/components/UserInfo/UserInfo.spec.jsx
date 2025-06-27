@@ -28,7 +28,11 @@ describe('UserInfo', () => {
 
     mount(<UserInfo user={user1} />);
 
-    cy.get('.UserInfo').should('have.attr', 'href', 'mailto:Sincere@april.biz');
+    cy.get('.UserInfo a').should(
+      'have.attr',
+      'href',
+      'mailto:Sincere@april.biz',
+    );
   });
 
   it('should work for another user', () => {
@@ -41,7 +45,7 @@ describe('UserInfo', () => {
 
     mount(<UserInfo user={user2} />);
 
-    cy.get('.UserInfo')
+    cy.get('.UserInfo a')
       .should('have.text', 'Ervin Howell')
       .should('have.attr', 'href', 'mailto:Shanna@melissa.tv');
   });
