@@ -1,53 +1,42 @@
-import './App.scss';
+// Перевірте чи є такий код для завантаження даних:
+import React, { useState, useEffect } from 'react';
+import { TodoList } from './components/TodoList';
 
-import todosFromServer from './api/todos.json';
-import usersFromServer from './api/users.json';
+export function App() {
+  const [todos, setTodos] = useState([]);
+  const [users, setUsers] = useState([]);
 
-function getUserById(userId) {
-  return usersFromServer.find(user => user.id === userId) || null;
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const todosResponse = await fetch(
+          'https://jsonplaceholder.typicode.com/todos',
+        );
+        const todosData = await todosResponse.json();
+
+        setTodos(todosData);
+
+        const usersResponse = await fetch(
+          'https://jsonplaceholder.typicode.com/users',
+        );
+        const usersData = await usersResponse.json();
+
+        setUsers(usersData);
+      } catch (error) {
+        // console.error('Error fetching data:', error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  if (todos.length === 0 || users.length === 0) {
+    return <p>Loading...</p>;
+  }
+
+  return (
+    <div className="App">
+      <TodoList todos={todos} users={users} />
+    </div>
+  );
 }
-
-export const todos = todosFromServer.map(todo => ({
-  ...todo,
-  user: getUserById(todo.userId),
-}));
-
-export const App = () => (
-  <div className="App">
-    <h1 className="App__title">Static list of todos</h1>
-
-    <section className="TodoList">
-      <article className="TodoInfo TodoInfo--completed">
-        <h2 className="TodoInfo__title">HTML</h2>
-
-        <a className="UserInfo" href="mailto:Sincere@april.biz">
-          Leanne Graham
-        </a>
-      </article>
-
-      <article className="TodoInfo TodoInfo--completed">
-        <h2 className="TodoInfo__title">CSS</h2>
-
-        <a className="UserInfo" href="mailto:Sincere@april.biz">
-          Leanne Graham
-        </a>
-      </article>
-
-      <article className="TodoInfo TodoInfo--completed">
-        <h2 className="TodoInfo__title">JS</h2>
-
-        <a className="UserInfo" href="mailto:Shanna@melissa.tv">
-          Ervin Howell
-        </a>
-      </article>
-
-      <article className="TodoInfo">
-        <h2 className="TodoInfo__title">React</h2>
-
-        <a className="UserInfo" href="mailto:Nathan@yesenia.net">
-          Clementine Bauch
-        </a>
-      </article>
-    </section>
-  </div>
-);

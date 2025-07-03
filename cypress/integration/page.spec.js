@@ -13,9 +13,14 @@ describe('Page', () => {
   });
 
   it('should render corresponding users', () => {
-    cy.get('.UserInfo').should('have.length', 200);
+    cy.get('.UserInfo').eq(0).within(() => {
+      cy.get('.UserInfo__name').should('have.text', 'Leanne Graham');
+      cy.get('.UserInfo__email').should('have.attr', 'href', 'mailto:Sincere@april.biz');
+    });
 
-    cy.get('.UserInfo').eq(0).should('have.text', 'Leanne Graham');
-    cy.get('.UserInfo').eq(199).should('have.text', 'Clementina DuBuque');
+    cy.get('.UserInfo').eq(199).within(() => {
+      cy.get('.UserInfo__name').should('have.text', 'Clementina DuBuque');
+      cy.get('.UserInfo__email').should('have.attr', 'href', 'mailto:Rey.Padberg@karina.biz');
+    });
   });
-});
+})

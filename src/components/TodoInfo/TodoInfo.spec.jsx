@@ -6,7 +6,7 @@ import { mount } from '@cypress/react18';
 import { TodoInfo } from './TodoInfo';
 
 describe('TodoInfo', () => {
-  describe('', () => {
+  describe('Completed todo', () => {
     beforeEach(() => {
       const user1 = {
         id: 1,
@@ -23,7 +23,7 @@ describe('TodoInfo', () => {
         user: user1,
       };
 
-      mount(<TodoInfo todo={todo} />);
+      mount(<TodoInfo todo={todo} user={todo.user} />);
     });
 
     it('should have a correct title', () => {
@@ -35,11 +35,12 @@ describe('TodoInfo', () => {
     });
 
     it('should have UserInfo', () => {
-      cy.get('.UserInfo').should('have.text', 'Leanne Graham');
+      cy.get('.UserInfo').should('contain.text', 'Leanne Graham');
+      cy.get('.UserInfo').should('contain.text', 'Sincere@april.biz');
     });
   });
 
-  describe('', () => {
+  describe('Not completed todo', () => {
     it('should NOT add TodoInfo--completed class for not completed todo', () => {
       const user2 = {
         id: 2,
@@ -56,7 +57,7 @@ describe('TodoInfo', () => {
         user: user2,
       };
 
-      mount(<TodoInfo todo={completedTodo} />);
+      mount(<TodoInfo todo={completedTodo} user={completedTodo.user} />);
 
       cy.get('.TodoInfo').should('not.have.class', 'TodoInfo--completed');
     });
@@ -77,13 +78,16 @@ describe('TodoInfo', () => {
         user: user3,
       };
 
-      mount(<TodoInfo todo={todo48} />);
+      mount(<TodoInfo todo={todo48} user={todo48.user} />);
 
-      cy.get('.TodoInfo__title')
-        .should('have.text', 'sit reprehenderit omnis quia');
+      cy.get('.TodoInfo__title').should(
+        'have.text',
+        'sit reprehenderit omnis quia',
+      );
 
       cy.get('.TodoInfo').should('have.class', 'TodoInfo--completed');
-      cy.get('.UserInfo').should('have.text', 'Clementine Bauch');
+      cy.get('.UserInfo').should('contain.text', 'Clementine Bauch');
+      cy.get('.UserInfo').should('contain.text', 'Nathan@yesenia.net');
     });
   });
 });
