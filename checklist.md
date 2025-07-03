@@ -3,6 +3,7 @@
 3. NEVER use array index as a `key` (it is the default behaviour)
 
 BAD EXAMPLE:
+
 ```jsx
 const CatCard = ({ cat }) => (
   <div key={cat.id}>
@@ -20,6 +21,7 @@ const CatList = ({ cats }) => (
 ```
 
 GOOD EXAMPLE:
+
 ```jsx
 const CatCard = ({ cat }) => (
   <div>
