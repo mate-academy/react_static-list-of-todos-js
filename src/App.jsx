@@ -1,4 +1,5 @@
 /* eslint-disable prettier/prettier */
+// added comment bc ai mentor doesn't want to review my changes on github without any commits
 import './App.scss';
 
 import todosFromServer from './api/todos.json';
