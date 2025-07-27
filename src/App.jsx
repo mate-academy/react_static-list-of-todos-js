@@ -14,16 +14,10 @@ export const todos = todosFromServer.map(todo => ({
 }));
 
 export const App = () => {
-
-  return(
-    <>
-    
-      <div className="App">
-          <h1 className="App__title">Static list of todos</h1>
-          <TodoList todos={todos} />
-      </div>
-    
-    </>
-  )
-
-}
+  return (
+    <div className="App">
+      <h1 className="App__title">Static list of todos</h1>
+      <TodoList todos={todos} />
+    </div>
+  );
+};

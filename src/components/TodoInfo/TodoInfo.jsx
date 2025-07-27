@@ -1,21 +1,13 @@
-import { UserInfo } from "../UserInfo/UserInfo"
+import { UserInfo } from '../UserInfo/UserInfo';
 
 // Add the required props
-export const TodoInfo = ({todo}) => {
-    return(
-        <>
-        
-            <article 
-                className={
-                    todo.completed 
-                    ? 'TodoInfo TodoInfo--completed' 
-                    : 'TodoInfo'
-                }
-            >
-                <h2 className="TodoInfo__title">{todo.title}</h2>
-                <UserInfo user={todo.user}/>
-            </article>
-        
-        </>
-    )
-}
+export const TodoInfo = ({ todo }) => {
+  return (
+    <article
+      className={todo.completed ? 'TodoInfo TodoInfo--completed' : 'TodoInfo'}
+    >
+      <h2 className="TodoInfo__title">{todo.title}</h2>
+      <UserInfo user={todo.user} />
+    </article>
+  );
+};
