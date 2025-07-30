@@ -2,7 +2,7 @@
 import { UserInfo } from '../UserInfo/UserInfo';
 
 export const TodoInfo = ({ todo }) => {
-  const user = todo.user;
+  const { user } = todo;
 
   return (
     <article
