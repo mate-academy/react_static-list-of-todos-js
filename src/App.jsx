@@ -18,6 +18,6 @@ export const App = () => (
   <div className="App">
     <h1 className="App__title">Static list of todos</h1>
     <TodoList todos={todos} />
-    <UserInfo users={usersFromServer} />
+    <UserInfo user={todos[0].user} />
   </div>
 );
