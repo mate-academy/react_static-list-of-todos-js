@@ -1,2 +1,13 @@
-// Add the required props
-export const TodoList = () => <>TodoList markup</>;
+// src/components/TodoList/TodoList.jsx
+import React from 'react';
+import { TodoInfo } from '../TodoInfo/TodoInfo'; // Importe o componente TodoInfo
+
+export const TodoList = ({ todos }) => {
+  return (
+    <section className="TodoList">
+      {todos.map(todo => (
+        <TodoInfo key={todo.id} todo={todo} />
+      ))}
+    </section>
+  );
+};
