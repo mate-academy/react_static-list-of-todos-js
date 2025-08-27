@@ -1,4 +1,4 @@
-import { UserInfo } from "../UserInfo/UserInfo";
+import { UserInfo } from '../UserInfo/UserInfo';
 
 // Add the required props
 export const TodoInfo = ({ todo }) => (
@@ -6,6 +6,6 @@ export const TodoInfo = ({ todo }) => (
     className={`TodoInfo ${todo.completed ? 'TodoInfo--completed' : ''}`}
   >
     <h2 className="TodoInfo__title">{todo.title}</h2>
-    {todo.user && <UserInfo key={todo.user.id} user={todo.user} />}
+    {todo.user && <UserInfo user={todo.user} />}
   </article>
 );
