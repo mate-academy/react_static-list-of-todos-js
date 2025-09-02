@@ -1,53 +1,88 @@
-import './App.scss';
+import React, { useState } from 'react';
 
-import todosFromServer from './api/todos.json';
-import usersFromServer from './api/users.json';
+export const goods = [
+  'Dumplings',
+  'Carrot',
+  'Eggs',
+  'Ice cream',
+  'Apple',
+  'Bread',
+  'Fish',
+  'Honey',
+  'Jam',
+  'Garlic',
+];
 
-function getUserById(userId) {
-  return usersFromServer.find(user => user.id === userId) || null;
-}
+export const App = () => {
+  const [selectedGood, setSelectedGood] = useState('Jam');
 
-export const todos = todosFromServer.map(todo => ({
-  ...todo,
-  user: getUserById(todo.userId),
-}));
+  const selectGood = good => {
+    setSelectedGood(good);
+  };
 
-export const App = () => (
-  <div className="App">
-    <h1 className="App__title">Static list of todos</h1>
+  const removeSelection = () => {
+    setSelectedGood(null);
+  };
 
-    <section className="TodoList">
-      <article className="TodoInfo TodoInfo--completed">
-        <h2 className="TodoInfo__title">HTML</h2>
+  return (
+    <div className="container">
+      <div style={{ display: 'flex', alignItems: 'center' }}>
+        <h1 className="title" data-cy="Title">
+          {selectedGood ? `${selectedGood} is selected` : 'No goods selected'}
+        </h1>
 
-        <a className="UserInfo" href="mailto:Sincere@april.biz">
-          Leanne Graham
-        </a>
-      </article>
+        {selectedGood && (
+          <button
+            data-cy="ClearButton"
+            type="button"
+            onClick={removeSelection}
+            aria-label="Remove selection"
+            style={{
+              marginLeft: '10px',
+              cursor: 'pointer',
+              background: 'transparent',
+              border: 'none',
+              fontWeight: 'bold',
+              fontSize: '1rem',
+            }}
+          >
+            x
+          </button>
+        )}
+      </div>
 
-      <article className="TodoInfo TodoInfo--completed">
-        <h2 className="TodoInfo__title">CSS</h2>
-
-        <a className="UserInfo" href="mailto:Sincere@april.biz">
-          Leanne Graham
-        </a>
-      </article>
-
-      <article className="TodoInfo TodoInfo--completed">
-        <h2 className="TodoInfo__title">JS</h2>
-
-        <a className="UserInfo" href="mailto:Shanna@melissa.tv">
-          Ervin Howell
-        </a>
-      </article>
-
-      <article className="TodoInfo">
-        <h2 className="TodoInfo__title">React</h2>
-
-        <a className="UserInfo" href="mailto:Nathan@yesenia.net">
-          Clementine Bauch
-        </a>
-      </article>
-    </section>
-  </div>
-);
+      <ul>
+        {goods.map(good => (
+          <li
+            key={good}
+            data-cy="Good"
+            className={
+              selectedGood === good ? 'has-background-success-light' : ''
+            }
+          >
+            <span data-cy="GoodTitle">{good}</span>
+            {selectedGood === good ? (
+              <button
+                data-cy="RemoveButton"
+                type="button"
+                className="is-info"
+                onClick={removeSelection}
+              >
+                -
+              </button>
+            ) : (
+              <button
+                data-cy="AddButton"
+                type="button"
+                className="is-success"
+                onClick={() => selectGood(good)}
+              >
+                +
+              </button>
+            )}
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+};
