@@ -1,5 +1,6 @@
 import { UserInfo } from '../UserInfo/index';
 
+// Add the required props
 export const TodoInfo = ({ todo }) => (
   <article
     className={`TodoInfo${todo.completed ? ' TodoInfo--completed' : ''}`}
