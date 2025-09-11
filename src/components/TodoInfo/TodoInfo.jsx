@@ -6,6 +6,6 @@ export const TodoInfo = ({ todo }) => (
     className={todo.completed ? 'TodoInfo TodoInfo--completed' : 'TodoInfo'}
   >
     <h2 className="TodoInfo__title">{todo.title}</h2>
-    <UserInfo user={todo?.user} />
+    {todo.user && <UserInfo user={todo.user} />}
   </article>
 );
