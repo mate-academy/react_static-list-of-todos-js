@@ -2,7 +2,7 @@ import './App.scss';
 
 import todosFromServer from './api/todos.json';
 import usersFromServer from './api/users.json';
-// import { TodoInfo } from './components/TodoInfo';
+
 import { TodoList } from './components/TodoList/TodoList';
 
 function getUserById(userId) {
