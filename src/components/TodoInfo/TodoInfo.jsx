@@ -3,10 +3,6 @@
 import { UserInfo } from '../UserInfo/UserInfo';
 
 export const TodoInfo = ({ todo }) => {
-  if (!todo.user) {
-    return null;
-  }
-
   return (
     <article
       className={`TodoInfo ${todo.completed === true ? 'TodoInfo--completed' : ''}`}
