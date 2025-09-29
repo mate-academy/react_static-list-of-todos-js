@@ -1,5 +1,5 @@
 import React from 'react';
-import { UserInfo } from './UserInfo';
+import { UserInfo } from '../UserInfo/UserInfo';
 
 export const TodoInfo = ({ todo }) => (
   <div className={`TodoInfo${todo.completed ? ' TodoInfo--completed' : ''}`}>

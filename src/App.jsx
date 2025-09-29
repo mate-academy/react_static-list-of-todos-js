@@ -1,6 +1,6 @@
 import React from 'react';
 import { todosFromServer, usersFromServer } from './api';
-import { TodoList } from './TodoList';
+import { TodoList } from './components/TodoList/TodoList';
 
 const todos = todosFromServer.map(todo => ({
   ...todo,
