@@ -13,7 +13,7 @@ export const TodoInfo = ({ todo }) => {
   return (
     <article className="TodoInfo">
       <h2 className="TodoInfo__title">{todo.title}</h2>
-      {todo.user && <UserInfo user={todo.user} key={todo.user.id} />}
+      {todo.user && <UserInfo user={todo.user} />}
     </article>
   );
 };
