@@ -1,5 +1,5 @@
 // Add the required props
-import { UserInfo } from '../UserInfo';
+import { UserInfo } from '../UserInfo/UserInfo';
 
 export const TodoInfo = ({ todo }) => {
   const articleClass = `TodoInfo${todo.completed ? ' TodoInfo--completed' : ''}`;
