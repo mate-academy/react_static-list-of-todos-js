@@ -7,9 +7,7 @@ export const TodoList = ({ todos }) => {
   return (
     <section className="TodoList">
       {todos.map(todo => (
-        <div key={todo.id}>
-          <TodoInfo todo={todo} />
-        </div>
+        <TodoInfo key={todo.id} todo={todo} />
       ))}
     </section>
   );
