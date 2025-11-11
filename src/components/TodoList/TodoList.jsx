@@ -1,15 +1,14 @@
 // Add the required props
 import { TodoInfo } from '../TodoInfo';
-import todos from '../../api/todos.json';
-import users from '../../api/users.json';
+import { UserInfo } from '../UserInfo';
 
-export const TodoList = () => (
+export const TodoList = ({todos}) => (
   <section className="TodoList">
     {todos.map(todo => (
       <TodoInfo
         key={todo.id}
         todo={todo}
-        user={users.find(user => user.id === todo.userId)}
+        user={todo.user && <UserInfo user={todo.user} />}
       />
     ))}
   </section>
