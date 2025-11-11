@@ -9,6 +9,6 @@ export const TodoInfo = ({ todo, user }) => (
   >
     <h2 className="TodoInfo__title">{todo.title}</h2>
 
-    <UserInfo user={user} />
+    <UserInfo user={user && <UserInfo user={todo.user} />} />
   </article>
 );
