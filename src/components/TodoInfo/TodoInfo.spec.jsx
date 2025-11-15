@@ -79,11 +79,27 @@ describe('TodoInfo', () => {
 
       mount(<TodoInfo todo={todo48} />);
 
-      cy.get('.TodoInfo__title')
-        .should('have.text', 'sit reprehenderit omnis quia');
+      cy.get('.TodoInfo__title').should(
+        'have.text',
+        'sit reprehenderit omnis quia',
+      );
 
       cy.get('.TodoInfo').should('have.class', 'TodoInfo--completed');
       cy.get('.UserInfo').should('have.text', 'Clementine Bauch');
+    });
+
+    it('should NOT render the UserInfo if todo.user does not exist', () => {
+      const todo48 = {
+        userId: 3,
+        id: 48,
+        title: 'sit reprehenderit omnis quia',
+        completed: true,
+        user: null,
+      };
+
+      mount(<TodoInfo todo={todo48} />);
+
+      cy.get('.UserInfo').should('not.exist');
     });
   });
 });
