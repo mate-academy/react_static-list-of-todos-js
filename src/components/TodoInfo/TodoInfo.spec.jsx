@@ -40,6 +40,18 @@ describe('TodoInfo', () => {
   });
 
   describe('', () => {
+    it('does not render UserInfo when todo.user is missing', () => {
+      const todoWithoutUser = {
+        id: 123,
+        title: 'Test todo',
+        completed: false,
+        user: null,
+      };
+
+      mount(<TodoInfo todo={todoWithoutUser} />);
+      cy.get('.UserInfo').should('not.exist');
+    });
+
     it('should NOT add TodoInfo--completed class for not completed todo', () => {
       const user2 = {
         id: 2,
@@ -79,8 +91,10 @@ describe('TodoInfo', () => {
 
       mount(<TodoInfo todo={todo48} />);
 
-      cy.get('.TodoInfo__title')
-        .should('have.text', 'sit reprehenderit omnis quia');
+      cy.get('.TodoInfo__title').should(
+        'have.text',
+        'sit reprehenderit omnis quia',
+      );
 
       cy.get('.TodoInfo').should('have.class', 'TodoInfo--completed');
       cy.get('.UserInfo').should('have.text', 'Clementine Bauch');
