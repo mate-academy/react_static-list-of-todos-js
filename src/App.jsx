@@ -2,6 +2,7 @@ import './App.scss';
 
 import todosFromServer from './api/todos.json';
 import usersFromServer from './api/users.json';
+import { TodoList } from './components/TodoList/TodoList';
 
 function getUserById(userId) {
   return usersFromServer.find(user => user.id === userId) || null;
@@ -12,42 +13,18 @@ export const todos = todosFromServer.map(todo => ({
   user: getUserById(todo.userId),
 }));
 
+// O App é o ponto de entrada. Ele pega os dados (todos) e entrega para o TodoList.
+// - <TodoList /> → é um componente React que você criou (ou vai criar).Ele é responsável por renderizar uma lista de tarefas.
+
+/* - todos={todos} → é uma prop sendo passada para esse componente.
+- O lado esquerdo (todos) é o nome da prop que o TodoList espera receber.
+- O lado direito ({todos}) é o valor que está sendo passado — nesse caso,
+o array de tarefas que você preparou antes (com todosFromServer.map(...)).
+ */
+
 export const App = () => (
   <div className="App">
     <h1 className="App__title">Static list of todos</h1>
-
-    <section className="TodoList">
-      <article className="TodoInfo TodoInfo--completed">
-        <h2 className="TodoInfo__title">HTML</h2>
-
-        <a className="UserInfo" href="mailto:Sincere@april.biz">
-          Leanne Graham
-        </a>
-      </article>
-
-      <article className="TodoInfo TodoInfo--completed">
-        <h2 className="TodoInfo__title">CSS</h2>
-
-        <a className="UserInfo" href="mailto:Sincere@april.biz">
-          Leanne Graham
-        </a>
-      </article>
-
-      <article className="TodoInfo TodoInfo--completed">
-        <h2 className="TodoInfo__title">JS</h2>
-
-        <a className="UserInfo" href="mailto:Shanna@melissa.tv">
-          Ervin Howell
-        </a>
-      </article>
-
-      <article className="TodoInfo">
-        <h2 className="TodoInfo__title">React</h2>
-
-        <a className="UserInfo" href="mailto:Nathan@yesenia.net">
-          Clementine Bauch
-        </a>
-      </article>
-    </section>
+    <TodoList todos={todos} />
   </div>
 );
