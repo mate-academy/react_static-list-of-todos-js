@@ -1,5 +1,5 @@
-import { UserInfo } from '../UserInfo/UserInfo';
 import cn from 'classnames';
+import { UserInfo } from '../UserInfo/UserInfo';
 
 export const TodoInfo = ({ todo }) => (
   <article
