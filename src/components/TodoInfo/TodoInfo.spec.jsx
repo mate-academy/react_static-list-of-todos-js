@@ -1,5 +1,6 @@
 /* eslint-disable max-len */
 /* eslint-disable react/jsx-filename-extension */
+/* eslint-disable prettier/prettier */
 
 import React from 'react';
 import { mount } from '@cypress/react18';
