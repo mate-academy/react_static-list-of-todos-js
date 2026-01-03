@@ -5,12 +5,10 @@ export const TodoInfo = ({ todo }) => {
   const isCompleted = todo.completed ? 'TodoInfo--completed' : '';
 
   return (
-    <>
-      <article className={`TodoInfo ${isCompleted}`}>
-        <h2 className="TodoInfo__title">{todo.title}</h2>
+    <article className={`TodoInfo ${isCompleted}`}>
+      <h2 className="TodoInfo__title">{todo.title}</h2>
 
-        {todo.user && <UserInfo user={todo.user} />}
-      </article>
-    </>
+      {todo.user && <UserInfo user={todo.user} />}
+    </article>
   );
 };
