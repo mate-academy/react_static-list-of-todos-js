@@ -17,7 +17,7 @@ export const todos = todosFromServer.map(todo => ({
 export const App = () => (
   <div className="App">
     <h1 className="App__title">Static list of todos</h1>
-    <TodoList todos={todos} key={todos.id} />
+    <TodoList todos={todos} />
     {/* <section className="TodoList">
       <article className="TodoInfo TodoInfo--completed">
         <h2 className="TodoInfo__title">HTML</h2>
