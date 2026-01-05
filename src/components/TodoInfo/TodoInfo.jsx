@@ -1,5 +1,5 @@
 import { UserInfo } from '../UserInfo/UserInfo';
-import '../TodoInfo/TodoInfo.scss'
+import './TodoInfo.scss';
 // Add the required props
 
 export const TodoInfo = ({ todo }) => (
@@ -11,4 +11,3 @@ export const TodoInfo = ({ todo }) => (
     {todo.user && <UserInfo user={todo.user} />}
   </article>
 );
-

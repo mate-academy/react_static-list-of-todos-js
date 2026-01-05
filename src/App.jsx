@@ -20,4 +20,3 @@ export const App = () => (
     <TodoList todos={todos} />
   </div>
 );
-
