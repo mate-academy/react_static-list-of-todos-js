@@ -1,19 +1,60 @@
 # React Static List of TODOs
 
-You are given `todosFromServer` and `usersFromServer` arrays with the required data.
+Projeto desenvolvido em React com foco em componentização e renderização de uma lista estática de tarefas associadas a usuários.
 
-Also each todo in the `todos` array has corresponding `user` attached (see the `App.jsx`).
+[DEMO LINK](https://Igor-hrm.github.io/react_static-list-of-todos-js/)
 
-Split the given `App` markup into component following the rules:
+---
 
-- don't change CSS class names, they are used in tests;
-- `TodoList` takes the `todos` and renders one `TodoInfo` per a `todo`;
-- `TodoInfo` takes a `todo` and renders its details;
-- make sure that the `TodoInfo` has a `TodoInfo--completed` modifier for all completed todos;
-- `UserInfo` takes a `user` and renders the details (use it only if `todo.user` exists).
+## Sobre o projeto
 
-## Instructions
-- Install Prettier Extention and use this [VSCode settings](https://mate-academy.github.io/fe-program/tools/vscode/settings.json) to enable format on save.
-- Implement a solution following the [React task guideline](https://github.com/mate-academy/react_task-guideline#react-tasks-guideline).
-- Open one more terminal and run tests with `npm test` to ensure your solution is correct.
-- Replace `<your_account>` with your Github username in the [DEMO LINK](https://<your_account>.github.io/react_static-list-of-todos-js/) and add it to the PR description.
+Este projeto foi desenvolvido durante meus estudos em React.
+O objetivo foi organizar a renderização de uma lista de TODOs em componentes reutilizáveis, respeitando regras de estrutura e requisitos de testes automatizados.
+
+Cada tarefa pode estar associada a um usuário e possui um estado de concluída ou não.
+
+---
+
+## Tecnologias utilizadas
+
+- React
+- JavaScript
+- CSS
+- Vite
+
+---
+
+## O que foi desenvolvido
+
+- Renderização de uma lista de TODOs a partir de dados fornecidos
+- Criação do componente `TodoList`
+- Criação do componente `TodoInfo`
+- Criação do componente `UserInfo`
+- Passagem de dados entre componentes via props
+- Aplicação de classe modificadora para tarefas concluídas
+- Renderização condicional de informações do usuário
+- Manutenção das classes CSS exigidas para testes
+- Deploy da aplicação com GitHub Pages
+
+---
+
+## Aprendizados
+
+Com este projeto, pratiquei:
+
+- Componentização no React
+- Renderização de listas
+- Renderização condicional
+- Organização de componentes
+- Atenção a requisitos de testes automatizados
+
+---
+
+## Como rodar o projeto localmente
+
+```bash
+git clone https://github.com/Igor-hrm/react_static-list-of-todos-js.git
+cd react_static-list-of-todos-js
+npm install
+npm run dev
+```
