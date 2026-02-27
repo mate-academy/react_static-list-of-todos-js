@@ -88,4 +88,20 @@ describe('TodoInfo', () => {
       cy.get('.UserInfo').should('have.text', 'Clementine Bauch');
     });
   });
+
+  it('should render "No user" when todo.user is null', () => {
+    const todoWithoutUser = {
+      userId: 4,
+      id: 99,
+      title: 'Learn JS',
+      completed: false,
+      user: null,
+    };
+
+    mount(<TodoInfo todo={todoWithoutUser} />);
+
+    cy.get('.TodoInfo__title').should('have.text', 'Learn JS');
+    cy.get('.UserInfo').should('not.exist');
+    cy.contains('No user').should('exist');
+  });
 });
