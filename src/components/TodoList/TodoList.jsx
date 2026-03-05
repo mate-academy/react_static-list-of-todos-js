@@ -1,9 +1,9 @@
-import { TodoInfo } from "../TodoInfo/TodoInfo";
+import { TodoInfo } from '../TodoInfo/TodoInfo';
 
-export const TodoList = ({todos}) => (
+export const TodoList = ({ todos }) => (
   <section className="TodoList">
     {todos.map(todo => (
-      <TodoInfo todo={ todo } />
+      <TodoInfo todo={todo} />
     ))}
   </section>
 );
