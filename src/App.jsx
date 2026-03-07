@@ -16,9 +16,14 @@ export const todos = todosFromServer.map(todo => ({
 export const App = () => (
   <div className="App">
     <h1 className="App__title">Static list of todos</h1>
-    <TodoList
-      todosFromServer={todosFromServer}
-      usersFromServer={usersFromServer}
-    />
+    {usersFromServer.map(user => {
+      return (
+        <TodoList
+          key={usersFromServer.id}
+          todosFromServer={todosFromServer}
+          user={user}
+        />
+      );
+    })}
   </div>
 );

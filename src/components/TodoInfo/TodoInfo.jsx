@@ -3,8 +3,6 @@ import { UserInfo } from '../UserInfo/UserInfo';
 
 import './TodoInfo.scss';
 
-export const TodoInfo = ({ todo, users }) => {
-  return users.map(user => {
-    return <UserInfo user={user} todo={todo} />;
-  });
+export const TodoInfo = ({ todo, user }) => {
+  return <UserInfo user={user} completed={todo.completed} title={todo.title} />;
 };

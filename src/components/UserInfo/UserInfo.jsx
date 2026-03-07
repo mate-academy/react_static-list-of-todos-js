@@ -1,7 +1,6 @@
 // Add the required props
-export const UserInfo = ({ user, todo }) => {
+export const UserInfo = ({ user, completed, title }) => {
   const { name, email } = user;
-  const { completed, title } = todo;
 
   return (
     <article
