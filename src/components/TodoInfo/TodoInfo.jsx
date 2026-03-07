@@ -1,2 +1,10 @@
 // Add the required props
-export const TodoInfo = () => <>TodoInfo markup</>;
+import { UserInfo } from '../UserInfo/UserInfo';
+
+import './TodoInfo.scss';
+
+export const TodoInfo = ({ todo, users }) => {
+  return users.map(user => {
+    return <UserInfo user={user} todo={todo} />;
+  });
+};
