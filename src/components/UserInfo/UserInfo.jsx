@@ -1,15 +1,8 @@
 // Add the required props
-export const UserInfo = ({ user, completed, title }) => {
-  const { name, email } = user;
-
+export const UserInfo = ({ user }) => {
   return (
-    <article
-      className={`TodoInfo ${completed === true ? 'TodoInfo--completed' : ''}`}
-    >
-      <h2 className="TodoInfo__title">{title}</h2>
-      <a className="UserInfo" href={email}>
-        {name}
-      </a>
-    </article>
+    <a className="UserInfo" href={user.email}>
+      {user.name}
+    </a>
   );
 };
