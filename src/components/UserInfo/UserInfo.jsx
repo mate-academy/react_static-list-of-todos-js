@@ -1,8 +1,14 @@
 // Add the required props
-export const UserInfo = ({ user: { name } }) => {
+export const UserInfo = ({ user }) => {
+  if (!user) {
+    return null;
+  }
+
+  const { name, email } = user;
+
   return (
-    <a className="UserInfo" href="mailto:Sincere@april.biz">
-      {name}
-    </a>
+    <div className="UserInfo" href={`mailto:${email}`}>
+      <p className="UserInfo__name">{name}</p>
+    </div>
   );
 };
