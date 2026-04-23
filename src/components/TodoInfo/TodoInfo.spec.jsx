@@ -1,6 +1,3 @@
-/* eslint-disable max-len */
-/* eslint-disable react/jsx-filename-extension */
-
 import React from 'react';
 import { mount } from '@cypress/react18';
 import { TodoInfo } from './TodoInfo';
@@ -40,26 +37,32 @@ describe('TodoInfo', () => {
   });
 
   describe('', () => {
-    it('should NOT add TodoInfo--completed class for not completed todo', () => {
-      const user2 = {
-        id: 2,
-        name: 'Ervin Howell',
-        username: 'Antonette',
-        email: 'Shanna@melissa.tv',
-      };
+    it(
+      [
+        'should NOT add TodoInfo--completed class',
+        'for not completed todo',
+      ].join(' '),
+      () => {
+        const user2 = {
+          id: 2,
+          name: 'Ervin Howell',
+          username: 'Antonette',
+          email: 'Shanna@melissa.tv',
+        };
 
-      const completedTodo = {
-        userId: 2,
-        id: 10,
-        title: 'Learn CSS',
-        completed: false,
-        user: user2,
-      };
+        const completedTodo = {
+          userId: 2,
+          id: 10,
+          title: 'Learn CSS',
+          completed: false,
+          user: user2,
+        };
 
-      mount(<TodoInfo todo={completedTodo} />);
+        mount(<TodoInfo todo={completedTodo} />);
 
-      cy.get('.TodoInfo').should('not.have.class', 'TodoInfo--completed');
-    });
+        cy.get('.TodoInfo').should('not.have.class', 'TodoInfo--completed');
+      },
+    );
 
     it('should work with the other todo', () => {
       const user3 = {
@@ -79,8 +82,10 @@ describe('TodoInfo', () => {
 
       mount(<TodoInfo todo={todo48} />);
 
-      cy.get('.TodoInfo__title')
-        .should('have.text', 'sit reprehenderit omnis quia');
+      cy.get('.TodoInfo__title').should(
+        'have.text',
+        'sit reprehenderit omnis quia',
+      );
 
       cy.get('.TodoInfo').should('have.class', 'TodoInfo--completed');
       cy.get('.UserInfo').should('have.text', 'Clementine Bauch');
