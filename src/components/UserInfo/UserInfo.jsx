@@ -1,6 +1,4 @@
-export const UserInfo = ({ todo: user }) => {
-  if (!user) return null;
-
+export const UserInfo = ({ user }) => {
   return (
     <a className="UserInfo" href={user.email}>
       {user.name}
