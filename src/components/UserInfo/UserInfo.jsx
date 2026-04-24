@@ -1,2 +1,9 @@
-// Add the required props
-export const UserInfo = () => <>UserInfo markup</>;
+export const UserInfo = ({ todo: user }) => {
+  if (!user) return null;
+
+  return (
+    <a className="UserInfo" href={user.email}>
+      {user.name}
+    </a>
+  );
+};
