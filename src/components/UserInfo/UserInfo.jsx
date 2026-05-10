@@ -1,11 +1,11 @@
 // Add the required props
-import '../../App.scss';
 
 export const UserInfo = ({ user }) => {
-    const { name, email } = user;
-    return (
-        <a className="UserInfo" href={`mailto:${email}`}>
-            {name}
-        </a>
-    );
+  const { name, email } = user;
+
+  return (
+    <a className="UserInfo" href={`mailto:${email}`}>
+      {name}
+    </a>
+  );
 };
