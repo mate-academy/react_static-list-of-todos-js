@@ -1,2 +1,7 @@
-// Add the required props
-export const TodoList = () => <>TodoList markup</>;
+export const TodoList = ({ todos }) => (
+  <section className="TodoList">
+    {todos.map(todo => (
+      <div key={todo.id}>{todo.title}</div>
+    ))}
+  </section>
+);
