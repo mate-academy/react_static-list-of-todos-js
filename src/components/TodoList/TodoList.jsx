@@ -1,11 +1,10 @@
-import { TodoInfo } from "../TodoInfo/TodoInfo";
-import { UserInfo } from "../UserInfo/UserInfo";
+import { TodoInfo } from '../TodoInfo/TodoInfo';
 
 // Add the required props
 export const TodoList = ({ todos }) => (
   <section className="TodoList">
-    {todos.map((todo) => (
+    {todos.map(todo => (
       <TodoInfo todo={todo} key={todo.id} />
     ))}
   </section>
-)
+);
