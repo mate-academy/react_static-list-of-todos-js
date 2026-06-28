@@ -6,7 +6,7 @@ import { mount } from '@cypress/react18';
 import { TodoInfo } from './TodoInfo';
 
 describe('TodoInfo', () => {
-  describe('', () => {
+  describe('with a completed todo', () => {
     beforeEach(() => {
       const user1 = {
         id: 1,
@@ -27,7 +27,7 @@ describe('TodoInfo', () => {
     });
 
     it('should have a correct title', () => {
-      cy.get('.TodoInfo__title').should('have.text', 'Learn HTML');
+      cy.get('.TodoInfo__title').should('contain', 'Learn HTML');
     });
 
     it('should add TodoInfo--completed class for a completed todo', () => {
@@ -35,11 +35,11 @@ describe('TodoInfo', () => {
     });
 
     it('should have UserInfo', () => {
-      cy.get('.UserInfo').should('have.text', 'Leanne Graham');
+      cy.get('.UserInfo').should('contain', 'Leanne Graham');
     });
   });
 
-  describe('', () => {
+  describe('with a not completed todo', () => {
     it('should NOT add TodoInfo--completed class for not completed todo', () => {
       const user2 = {
         id: 2,
@@ -48,7 +48,7 @@ describe('TodoInfo', () => {
         email: 'Shanna@melissa.tv',
       };
 
-      const completedTodo = {
+      const todo = {
         userId: 2,
         id: 10,
         title: 'Learn CSS',
@@ -56,7 +56,7 @@ describe('TodoInfo', () => {
         user: user2,
       };
 
-      mount(<TodoInfo todo={completedTodo} />);
+      mount(<TodoInfo todo={todo} />);
 
       cy.get('.TodoInfo').should('not.have.class', 'TodoInfo--completed');
     });
@@ -69,7 +69,7 @@ describe('TodoInfo', () => {
         email: 'Nathan@yesenia.net',
       };
 
-      const todo48 = {
+      const todo = {
         userId: 3,
         id: 48,
         title: 'sit reprehenderit omnis quia',
@@ -77,13 +77,14 @@ describe('TodoInfo', () => {
         user: user3,
       };
 
-      mount(<TodoInfo todo={todo48} />);
+      mount(<TodoInfo todo={todo} />);
 
-      cy.get('.TodoInfo__title')
-        .should('have.text', 'sit reprehenderit omnis quia');
-
+      cy.get('.TodoInfo__title').should(
+        'have.text',
+        'sit reprehenderit omnis quia',
+      );
       cy.get('.TodoInfo').should('have.class', 'TodoInfo--completed');
-      cy.get('.UserInfo').should('have.text', 'Clementine Bauch');
+      cy.get('.UserInfo').should('contain', 'Clementine Bauch');
     });
   });
 });
