@@ -34,7 +34,6 @@
 //     }
 //   }
 // }
-
 export {};
 
 Cypress.Commands.add('getByDataCy', selector => {
