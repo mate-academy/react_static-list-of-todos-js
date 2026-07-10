@@ -2,6 +2,7 @@ import './App.scss';
 
 import todosFromServer from './api/todos.json';
 import usersFromServer from './api/users.json';
+import { TodoList } from './components/TodoList';
 
 function getUserById(userId) {
   return usersFromServer.find(user => user.id === userId) || null;
@@ -16,7 +17,11 @@ export const App = () => (
   <div className="App">
     <h1 className="App__title">Static list of todos</h1>
 
-    <section className="TodoList">
+    <TodoList todos={todos} />
+  </div>
+);
+
+/* <section className="TodoList">
       <article className="TodoInfo TodoInfo--completed">
         <h2 className="TodoInfo__title">HTML</h2>
 
@@ -50,4 +55,4 @@ export const App = () => (
       </article>
     </section>
   </div>
-);
+); */
