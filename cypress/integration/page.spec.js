@@ -9,7 +9,10 @@ describe('Page', () => {
 
   it('should render todos in correct order', () => {
     cy.get('.TodoInfo__title').eq(0).should('have.text', 'delectus aut autem');
-    cy.get('.TodoInfo__title').eq(199).should('have.text', 'ipsam aperiam voluptates qui');
+    // eslint-disable-next-line max-len
+    cy.get('.TodoInfo__title')
+      .eq(199)
+      .should('have.text', 'ipsam aperiam voluptates qui');
   });
 
   it('should render corresponding users', () => {
