@@ -1,5 +1,4 @@
 // Add the required props
-import React from 'react';
 
 export const UserInfo = ({ user }) => {
   const { name, email } = user;
