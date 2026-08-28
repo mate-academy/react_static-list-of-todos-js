@@ -1,8 +1,8 @@
-import { UserInfo } from "../UserInfo";
+import { UserInfo } from '../UserInfo';
 
 // Add the required props
 export const TodoInfo = ({ todo }) => {
-  const {completed, title} = todo;
+  const { completed, title } = todo;
 
   return (
     <article className={`TodoInfo ${completed ? 'TodoInfo--completed' : ''}`}>
@@ -10,5 +10,5 @@ export const TodoInfo = ({ todo }) => {
 
       {todo.user && <UserInfo user={todo.user} />}
     </article>
-  )
+  );
 };
