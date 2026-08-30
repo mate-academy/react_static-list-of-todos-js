@@ -1,2 +1,15 @@
-// Add the required props
-export const TodoInfo = () => <>TodoInfo markup</>;
+import { UserInfo } from '../UserInfo/UserInfo';
+
+export const TodoInfo = ({ todo }) => {
+  const { title, completed, user } = todo;
+
+  const todoClassName = completed ? 'TodoInfo TodoInfo--completed' : 'TodoInfo';
+
+  return (
+    <article className={todoClassName}>
+      <h2 className="TodoInfo__title">{title}</h2>
+
+      {user && <UserInfo user={user} />}
+    </article>
+  );
+};
