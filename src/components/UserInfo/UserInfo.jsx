@@ -1,6 +1,5 @@
-// Add the required props
 export const UserInfo = ({ user }) => (
-      <a className={user.name} href={ user.email }>
-      {user.name}
-    </a>
+  <a className="UserInfo" href={`mailto:${user.email}`}>
+    {user.name}
+  </a>
 );
