@@ -7,8 +7,7 @@ export const TodoInfo = ({ todo: { completed, title, user } }) => {
       className={classNames('TodoInfo', { 'TodoInfo--completed': completed })}
     >
       <h2 className="TodoInfo__title">{title}</h2>
-
-      <UserInfo user={user} />
+      {user ? <UserInfo user={user} /> : null}
     </article>
   );
 };
